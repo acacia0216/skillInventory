@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Modify">
+
+   	<typeAlias  alias="userVo" type="nexacro.sample.skillInventory.vo.userVO"/>
+   	<typeAlias  alias="resumeVo" type="nexacro.sample.skillInventory.vo.resumeVO"/>
+   	<typeAlias  alias="educationVo" type="nexacro.sample.skillInventory.vo.educationVO"/>
+   	<typeAlias  alias="certificateVo" type="nexacro.sample.skillInventory.vo.certificateVO"/>
+   	<typeAlias  alias="companyVo" type="nexacro.sample.skillInventory.vo.companyVO"/>
+   	<typeAlias  alias="trainingVo" type="nexacro.sample.skillInventory.vo.trainingVO"/>
+   	<typeAlias  alias="technologyVo" type="nexacro.sample.skillInventory.vo.technologyVO"/>
+   	<typeAlias  alias="projectVo" type="nexacro.sample.skillInventory.vo.projectVO"/>
+   	
+   	
+   	<!-- 이력서 -->
+   	<insert id="insertResume" parameterClass="resumeVo">
+	   	<selectKey keyProperty="resumeNo" resultClass="int">
+	   		select seq_resume.nextval from dual
+	   	</selectKey>
+   		insert into resume_tbl values(
+   			#resumeNo#,
+   			#personNo#,
+   			#gender#,
+   			#company#,
+   			#entryDate#,
+   			#department#,
+   			#rank#,
+   			#military#,
+   			#maritalState#,
+   			#startDate#,
+   			#endDate#,
+   			#invertebrate#,
+   			#phone#,
+   			#cellPhone#,
+   			#email#,
+   			#address#,
+   			#career#,
+   			#userNo#)
+   	</insert>
+   	
+   	<update id="updateResume" parameterClass="resumeVo">
+   		update resume_tbl
+   		set gender=#gender#,
+   			company=#company#,
+   			entryDate=#entryDate#,
+   			department=#department#,
+   			rank=#rank#,
+   			military=#military#,
+   			maritalState=#maritalState#,
+   			startDate=#startDate#,
+   			endDate=#endDate#,
+   			invertebrate=#invertebrate#,
+   			phone=#phone#,
+   			cellPhone=#cellPhone#,
+   			email=#email#,
+   			address=#address#,
+   			career=#career#
+   		where userNo=#userNo#
+   	</update>
+   	
+   	<!-- 학력 -->
+   	<insert id="insertEducation" parameterClass="educationVo">
+   		insert into education_tbl values(
+   		seq_education.nextval,
+   		#schoolName#,
+   		#eduMajor#,
+   		#eduState#,
+   		#eduDate#,
+   		#resumeNo#)
+   	</insert>
+   		
+   	<update id="updateEducation" parameterClass="educationVo">
+   		update education_tbl
+   		set schoolName=#schoolName#,
+   			eduMajor=#eduMajor#,
+   			eduState=#eduState#,
+   			eduDate=#eduDate#
+   		where educationNo=#educationNo#
+   	</update>
+   	
+   	<delete id="deleteEducation" parameterClass="educationVo">
+   		delete education_tbl
+   		where educationNo=#educationNo#
+   	</delete>
+   	
+   	
+   	<!-- 자격증 -->
+   	<insert id="insertCertificate" parameterClass="certificateVo">
+   		insert into certificate_tbl values(
+   		seq_certificate.nextval,
+   		#certificateName#,
+   		#takingDate#,
+   		#resumeNo#)
+   	</insert>
+   		
+   	<update id="updateCertificate" parameterClass="certificateVo">
+   		update certificate_tbl
+   		set certificateName=#certificateName#,
+   			takingDate=#takingDate#
+   		where certificateNo=#certificateNo#
+   	</update>
+   	
+   	<delete id="deleteCertificate" parameterClass="certificateVo">
+   		delete certificate_tbl
+   		where certificateNo=#certificateNo#
+   	</delete>
+   	
+   	<!-- 회사 -->
+	<insert id="insertCompany" parameterClass="companyVo">
+		insert into company_tbl values(
+		seq_company.nextval,
+		#companyName#,
+		#startDate#,
+		#endDate#,
+		#companyWork#,
+		#rank#,
+		#resumeNo#)
+	</insert>
+		
+   	<update id="updateCompany" parameterClass="companyVo">
+   		update company_tbl
+   		set companyName=#companyName#,
+   			startDate=#startDate#,
+   			endDate=#endDate#,
+   			companyWork=#companyWork#,
+   			rank=#rank#
+   		where companyNo=#companyNo#
+   	</update>
+   	
+   	<delete id="deleteCompany" parameterClass="companyVo">
+   		delete company_tbl
+   		where companyNo=#companyNo#
+   	</delete>
+   	
+   	<!-- 교육 -->
+   	<insert id="insertTraining" parameterClass="trainingVo">
+   		insert into training_tbl values(
+   		seq_training.nextval,
+   		#trainingName#,
+   		#startDate#,
+   		#endDate#,
+   		#academyName#,
+   		#resumeNo#)
+   	</insert>
+   		
+   	<update id="updateTraining" parameterClass="trainingVo">
+   		update training_tbl
+   		set trainingName=#trainingName#,
+   			startDate=#startDate#,
+   			endDate=#endDate#,
+   			academyName=#academyName#
+   		where trainingNo=#trainingNo#
+   	</update>
+   	
+   	<delete id="deleteTraining" parameterClass="trainingVo">
+   		delete training_tbl
+   		where trainingNo=#trainingNo#
+   	</delete>
+   	
+   	<!-- 기술 -->
+   	<insert id="insertTechnology" parameterClass="technologyVo">
+   		insert into technology_tbl values(
+   		seq_technology.nextval,
+   		#technologyName#,
+   		#proficiency#,
+   		#resumeNo#)
+   	</insert>
+   		
+   	<update id="updateTechnology" parameterClass="technologyVo">
+   		update technology_tbl
+   		set technologyName=#technologyName#,
+   			proficiency=#proficiency#
+   		where technologyNo=#technologyNo#
+   	</update>
+   	
+   	<delete id="deleteTechnology" parameterClass="technologyVo">
+   		delete technology_tbl
+   		where technologyNo=#technologyNo#
+   	</delete>
+   	
+   	<!-- 프로젝트 -->
+   	<insert id="insertProject" parameterClass="projectVo">
+   		insert into project_tbl values(
+   		seq_project.nextval,
+   		#projectName#,
+   		#startDate#,
+   		#endDate#,
+   		#customer#,
+   		#company#,
+   		#industry#,
+   		#application#,
+   		#part#,
+   		#model#,
+   		#operatingSystem#,
+   		#language#,
+   		#dbms#,
+   		#tool#,
+   		#communication#,
+   		#other#,
+   		#userNo#)
+   	</insert>
+   		
+   	<update id="updateProject" parameterClass="projectVo">
+   		update project_tbl
+   		set projectName=#projectName#,
+   			startDate=#startDate#,
+   			endDate=#endDate#,
+   			customer=#customer#,
+   			company=#company#,
+   			industry=#industry#,
+   			application=#application#,
+   			part=#part#,
+   			model=#model#,
+   			operatingSystem=#operatingSystem#,
+   			language=#language#,
+   			dbms=#dbms#,
+   			tool=#tool#,
+   			communication=#communication#,
+   			other=#other#
+   		where projectNo=#projectNo#
+   	</update>
+   	
+   	<delete id="deleteProject" parameterClass="projectVo">
+   		delete project_tbl
+   		where projectNo=#projectNo#
+   	</delete>
+</sqlMap>

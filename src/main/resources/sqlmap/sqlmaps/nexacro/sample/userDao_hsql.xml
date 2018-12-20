@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="User">
+
+   <!-- 	<typeAlias  alias="userVo" type="nexacro.sample.skillInventory.vo.userVO"/>
+   
+   <resultMap id="user" class="userVo">
+        <result property="userNo" column="userNo" />
+        <result property="userName" column="userName" />
+        <result property="userId" column="userId" />
+        <result property="userPassword" column="userPassword" />
+        <result property="authority" column="authority" />
+    </resultMap>
+    
+     <select id="userLogin" parameterClass="userVO" resultMap="user">
+            select * from user_tbl
+            where userId = #userId# and userPassword = #userPassword#            
+    </select> -->
+    
+ 
+    
+</sqlMap>

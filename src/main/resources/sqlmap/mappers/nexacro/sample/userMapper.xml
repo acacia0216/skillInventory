@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="nexacro.sample.skillInventory.service.dao.mybatis.UserMapper">
+	
+ <!-- Sample resultObject -->
+   <resultMap id="user" type="nexacro.sample.skillInventory.vo.userVO">
+        <result property="userNo" column="userNo" />
+        <result property="userName" column="userName" />
+        <result property="userId" column="userId" />
+        <result property="userPassword" column="userPassword" />
+        <result property="authority" column="authority" />
+    </resultMap>
+    
+     <select id="userLogin" parameterType="nexacro.sample.skillInventory.vo.userVO" resultMap="user">
+            select * from user_tbl
+            where userId = #{userId} and userPassword = #{userPassword}            
+    </select>
+    
+</mapper>

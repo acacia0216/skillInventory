@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+<sqlMap namespace="Search">
+
+   	<typeAlias  alias="userVo" type="nexacro.sample.skillInventory.vo.userVO"/>
+   	<typeAlias  alias="resumeVo" type="nexacro.sample.skillInventory.vo.resumeVO"/>
+   	<typeAlias  alias="educationVo" type="nexacro.sample.skillInventory.vo.educationVO"/>
+   	<typeAlias  alias="certificateVo" type="nexacro.sample.skillInventory.vo.certificateVO"/>
+   	<typeAlias  alias="companyVo" type="nexacro.sample.skillInventory.vo.companyVO"/>
+   	<typeAlias  alias="trainingVo" type="nexacro.sample.skillInventory.vo.trainingVO"/>
+   	<typeAlias  alias="technologyVo" type="nexacro.sample.skillInventory.vo.technologyVO"/>
+   	<typeAlias  alias="projectVo" type="nexacro.sample.skillInventory.vo.projectVO"/>
+   	<typeAlias  alias="searchVo" type="nexacro.sample.skillInventory.vo.searchVO"/>
+   	<typeAlias  alias="resultVo" type="nexacro.sample.skillInventory.vo.resultVO"/>
+   
+    <!-- Sample resultObject -->
+   <resultMap id="user" class="userVo">
+        <result property="userNo" column="userNo" />
+        <result property="userName" column="userName" />
+        <result property="userId" column="userId" />
+        <result property="userPassword" column="userPassword" />
+        <result property="authority" column="authority" />
+    </resultMap>
+    
+    <resultMap id="resume" class="resumeVo">
+        <result property="resumeNo" column="resumeNo" />
+        <result property="userName" column="userName" />
+        <result property="userNo" column="userNo" />
+        <result property="personNo" column="personNo" />
+        <result property="gender" column="gender" />
+        <result property="company" column="company" />
+        <result property="entryDate" column="entryDate" />
+        <result property="department" column="department" />
+        <result property="rank" column="rank" />
+        <result property="military" column="military" />
+        <result property="maritalState" column="maritalState" />
+        <result property="startDate" column="startDate" />
+        <result property="endDate" column="endDate" />
+        <result property="invertebrate" column="invertebrate" />
+        <result property="phone" column="phone" />
+        <result property="cellPhone" column="cellPhone" />
+        <result property="email" column="email" />
+        <result property="address" column="address" />
+        <result property="career" column="career" />
+    </resultMap>
+    
+    <resultMap class="projectVo" id="project">
+		<result property="projectNo" column="projectNo"/>
+    	<result property="projectName" column="projectName"/>
+    	<result property="startDate" column="startDate"/>
+    	<result property="endDate" column="endDate"/>
+    	<result property="customer" column="customer"/>
+    	<result property="company" column="company"/>
+    	<result property="industry" column="industry"/>
+    	<result property="application" column="application"/>
+    	<result property="part" column="part"/>
+    	<result property="model" column="model"/>
+    	<result property="operatingSystem" column="operatingSystem"/>
+    	<result property="language" column="language"/>
+    	<result property="dbms" column="dbms"/>
+    	<result property="tool" column="tool"/>
+    	<result property="communication" column="communication"/>
+    	<result property="other" column="other"/>
+    </resultMap>
+    
+    <!-- 검색창 리스트 전체조회 -->
+     <select id="searchAll" parameterClass="userVo" resultMap="user">
+            select * from user_tbl
+            where authority = 0
+    </select>
+    
+    <!-- 유저번호로 이력정보 가져오기  -->
+ 	<select id="searchResume" parameterClass="userVo" resultMap="resume">
+    		select
+    			rt.resumeno,
+    			rt.personno,
+    			rt.gender,
+    			rt.company,
+    			to_char(rt.entrydate,'yyyy-MM-dd') entryDate,
+    			rt.department,
+    			rt.rank,
+    			rt.military,
+    			rt.maritalstate,
+    			to_char(rt.startdate,'yyyy-MM-dd') startDate,
+    			to_char(rt.enddate,'yyyy-MM-dd') endDate,
+    			rt.invertebrate,
+    			rt.phone,
+    			rt.cellphone,
+    			rt.email,
+    			rt.address,
+    			rt.career,
+    			ut.userno,
+    			ut.username
+    		from resume_tbl rt, user_tbl ut
+    		where ut.userno=rt.userno and ut.userno=#userNo#
+    </select>
+ 
+  <!-- 유저번호로 학력정보 가져오기  -->
+    <select id="searchEducation" parameterClass="userVo" resultClass="educationVo">
+    		select 
+    			et.educationno,
+    			et.schoolname,
+    			et.edumajor,
+    			et.edustate,
+    			to_char(et.edudate,'yyyyMMdd') eduDate,
+    			temp.resumeno
+    		from education_tbl et, (select * from resume_tbl rt join user_tbl ut using(userno)
+    								where userno=#userNo#) temp
+    		where et.resumeno=temp.resumeno
+    </select>
+    
+      <!-- 유저번호로 자격증 정보 가져오기  -->
+    <select id="searchCertificate" parameterClass="userVo" resultClass="certificateVo">
+    		select 
+    			ct.certificateno,
+    			ct.certificatename,
+    			to_char(ct.takingdate,'yyyyMMdd') takingDate,
+    			temp.resumeno
+    		from certificate_tbl ct, (select * from resume_tbl rt join user_tbl ut using(userno)
+    									where userno=#userNo#) temp
+    		where ct.resumeno=temp.resumeno
+    </select>
+    
+      <!-- 유저번호로 회사이력 가져오기  -->
+    <select id="searchCompany" parameterClass="userVo" resultClass="companyVo">
+    		select 
+	    		ct.companyno,
+	    		ct.companyname,
+	    		to_char(ct.startdate,'yyyyMMdd') startDate,
+	    		to_char(ct.enddate,'yyyyMMdd') endDate,
+	    		ct.companywork,
+	    		ct.rank,
+    			temp.resumeno
+    		from company_tbl ct, (select * from resume_tbl rt join user_tbl ut using(userno)
+    								where userno=#userNo#) temp
+    		where ct.resumeno=temp.resumeno
+    </select>
+    
+      <!-- 유저번호로 교육 이력 가져오기  -->
+    <select id="searchTraining" parameterClass="userVo" resultClass="trainingVo">
+    		select 
+    			tt.trainingno,
+	    		tt.trainingname,
+	    		to_char(tt.startdate,'yyyyMMdd') startDate,
+	    		to_char(tt.enddate,'yyyyMMdd') endDate,
+	    		tt.academyname,
+    			temp.resumeno
+    		from training_tbl tt, (select * from resume_tbl rt join user_tbl ut using(userno)
+    								where userno=#userNo#) temp
+    		where tt.resumeno=temp.resumeno
+    </select>
+    
+      <!-- 유저번호로 보유기술 정보 가져오기  -->
+    <select id="searchTechnology" parameterClass="userVo" resultClass="technologyVo">
+    		select 
+	    		tt.technologyno,
+	    		tt.technologyname,
+	    		tt.proficiency,
+    			temp.resumeno
+    		from technology_tbl tt, (select * from resume_tbl rt join user_tbl ut using(userno)
+    									where userno=#userNo#) temp
+    		where tt.resumeno=temp.resumeno
+    </select>
+    
+     <!-- 유저번호로 프로젝트 가져오기  -->
+    <select id="searchProject" parameterClass="userVo" resultMap="project">
+    		select * from project_tbl pt join user_tbl using(userno) where userno=#userNo#
+    </select>
+    
+    <!-- 단일조건 검색 -->
+   <select id="oneConditionSearch" parameterClass="searchVo" resultClass="resultVo">
+		select * from user_tbl join resume_tbl using(userno)
+		where 1=1
+		<dynamic>
+			<isEqual property="condition" compareValue="userName" prepend="and">
+				userName like '%' || #keyword# || '%' 
+			</isEqual>
+			<isEqual property="condition" compareValue="userId" prepend="and">
+				userId like '%' || #keyword# || '%' 
+			</isEqual>
+		</dynamic>
+   </select>
+   
+   <select id="conditionalSearch" parameterClass="searchVo" resultClass="resultVo">
+		select * from user_tbl join resume_tbl using(userno)
+		<!--  join education_tbl using(resumeno) join certificate_tbl using(resumeno) join technology_tbl using(resumeno) -->
+		where 1=1
+		<isNotNull prepend="and" property="gender">
+			gender=#gender#
+		</isNotNull>
+		<isNotNull prepend="and" property="maritalState">
+			maritalState=#maritalState#
+		</isNotNull>
+		<isNotNull prepend="and" property="age">
+				<![CDATA[
+					SUBSTR(personNo,0,2) >= #fromAge# and
+					SUBSTR(personNo,0,2) <= #toAge#
+				]]>
+		</isNotNull>
+		<isNotNull prepend="and" property="career">
+			REGEXP_REPLACE(career,'[^0-9]')
+				<isEqual property="careerState" compareValue="up">
+					<![CDATA[
+						 >=
+					]]>
+				</isEqual>
+				<isEqual property="careerState" compareValue="down">
+					<![CDATA[
+						 <
+					]]>
+				</isEqual>
+			#career#
+		</isNotNull>
+   </select>
+</sqlMap>
