@@ -1,0 +1,954 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="1.5">
+  <TypeDefinition url="..\default_typedef.xml"/>
+  <Form id="form_insert" classname="form_insert" left="0" top="0" width="1024" height="700" titletext="New Form" onload="form_onload">
+    <Layouts>
+      <Layout>
+        <Tab id="Tab00" taborder="0" left="0%" top="7" height="1105" tabindex="0" scrollbars="autoboth" width="100%" onmove="tabOnMove" style="color:#777777ff;">
+          <Tabpages>
+            <Tabpage id="tabpage1" text="개인 이력카드">
+              <Layouts>
+                <Layout>
+                  <Static id="Static00" taborder="45" text="개 인 이 력 카 드" left="5%" top="23" right="5%" height="50" style="border:3 solid #000000ff ;color:#46463dff;align:center;font:bold 22 Dotum;"/>
+                  <Static id="Static01" taborder="0" text="성명" left="4.99%" top="87" right="85.32%" height="25" style="border:1 solid #999999ff ;color:#46463dff;align:center;"/>
+                  <Static id="Static03" taborder="2" text="주민등록번호" left="30.23%" top="87" right="54.21%" height="25" style="border:1 solid #999999ff ;color:#46463dff;align:center;"/>
+                  <Static id="personNo" taborder="46" left="45.69%" top="87" right="30.72%" height="25" style="border:1 solid #999999ff ;color:#46463dff;align:center;"/>
+                  <Static id="Static05" taborder="4" text="성별" left="69.18%" top="87" right="18%" height="25" style="border:1 solid #999999ff ;color:#46463dff;align:center;"/>
+                  <Static id="Static07" taborder="6" text="소속회사" left="4.99%" top="111" right="85.32%" height="25" style="border:1 solid #999999ff ;color:#46463dff;align:center;"/>
+                  <Static id="company" taborder="47" left="14.58%" top="111" right="49.8%" height="25" style="border:1 solid #999999ff ;color:#46463dff;align:center;"/>
+                  <Static id="Static09" taborder="8" text="입사일" left="50.1%" top="111" right="37.57%" height="25" style="border:1 solid #999999ff ;color:#46463dff;align:center;"/>
+                  <Static id="entryDate" taborder="48" left="62.33%" top="111" right="4.89%" height="25" style="border:1 solid #999999ff ;color:#46463dff;align:center;"/>
+                  <Static id="Static11" taborder="10" text="부서" left="4.99%" top="135" right="85.32%" height="25" style="border:1 solid #999999ff ;color:#46463dff;align:center;"/>
+                  <Static id="department" taborder="49" left="14.58%" top="135" right="74.07%" height="25" style="border:1 solid #999999ff ;color:#46463dff;align:center;"/>
+                  <Static id="Static13" taborder="12" text="직위" left="25.83%" top="135" right="64.29%" height="25" style="border:1 solid #999999ff ;color:#46463dff;align:center;"/>
+                  <Static id="Static32" taborder="61" left="23.68%" top="159" right="41.68%" height="25" style="border:1 solid #999999ff ;color:#46463dff;"/>
+                  <Static id="rank" taborder="50" left="35.62%" top="135" right="53.33%" height="25" style="border:1 solid #999999ff ;color:#46463dff;align:center;"/>
+                  <Static id="Static15" taborder="14" text="병역" left="46.58%" top="135" right="41.68%" height="25" style="border:1 solid #999999ff ;color:#46463dff;align:center;"/>
+                  <Static id="military" taborder="51" left="58.22%" top="135" right="29.94%" height="25" style="border:1 solid #999999ff ;color:#46463dff;align:center;"/>
+                  <Static id="Static17" taborder="16" text="결혼" left="69.96%" top="135" right="17.12%" height="25" style="border:1 solid #999999ff ;color:#46463dff;align:center;"/>
+                  <Static id="marry" taborder="52" left="82.78%" top="135" right="4.89%" height="25" style="border:1 solid #999999ff ;color:#46463dff;align:center;"/>
+                  <Static id="Static19" taborder="18" text="병역 입대일 ~ 제대일" left="4.99%" top="159" right="76.22%" height="25" style="border:1 solid #999999ff ;color:#46463dff;align:center;"/>
+                  <Static id="militaryStart" taborder="53" left="23.68%" top="159" right="60.08%" height="25" style="border:0 solid #c0c0c0ff ;color:#46463dff;align:center;"/>
+                  <Static id="Static21" taborder="21" text="역종, 병과" left="58.22%" top="159" right="27.2%" height="25" style="border:1 solid #999999ff ;color:#46463dff;align:center;"/>
+                  <Static id="militaryClass" taborder="54" left="72.7%" top="159" right="4.89%" height="25" style="border:1 solid #999999ff ;color:#46463dff;align:center;"/>
+                  <Static id="Static23" taborder="23" text="전화" left="4.99%" top="205" right="82.49%" height="25" style="border:1 solid #999999ff ;color:#46463dff;align:center;"/>
+                  <Static id="phone" taborder="55" left="17.42%" top="205" right="45.5%" height="25" style="border:1 solid #999999ff ;color:#46463dff;align:center;"/>
+                  <Static id="cellPhone" taborder="56" left="54.4%" top="205" right="4.89%" height="25" style="border:1 solid #999999ff ;color:#46463dff;align:center;"/>
+                  <Static id="Static26" taborder="26" text="E-Mail" left="4.99%" top="229" right="82.49%" height="25" style="border:1 solid #999999ff ;color:#46463dff;align:center;"/>
+                  <Static id="email" taborder="57" left="17.42%" top="229" right="4.89%" height="25" style="border:1 solid #999999ff ;color:#46463dff;align:center;"/>
+                  <Static id="Static28" taborder="28" text="주소" left="4.99%" top="253" right="82.49%" height="25" style="border:1 solid #999999ff ;color:#46463dff;align:center;"/>
+                  <Static id="address" taborder="58" left="17.42%" top="253" right="4.89%" height="25" style="border:1 solid #999999ff ;color:#46463dff;align:center;"/>
+                  <Grid id="Grid00" taborder="32" useinputpanel="false" left="5.09%" top="341" right="42.95%" height="200" binddataset="ds_education" autofittype="col" cellclickbound="cell" autoenter="select" autoupdatetype="itemselect" selecttype="cell" style="color:#333333ff;">
+                    <Formats>
+                      <Format id="default">
+                        <Columns>
+                          <Column size="128"/>
+                          <Column size="80"/>
+                          <Column size="47"/>
+                          <Column size="80"/>
+                        </Columns>
+                        <Rows>
+                          <Row size="24" band="head"/>
+                          <Row size="24"/>
+                        </Rows>
+                        <Band id="head">
+                          <Cell text="학교명"/>
+                          <Cell col="1" text="전공"/>
+                          <Cell col="2" text="상태"/>
+                          <Cell col="3" text="날짜"/>
+                        </Band>
+                        <Band id="body">
+                          <Cell edittype="none" text="bind:schoolName"/>
+                          <Cell col="1" edittype="none" text="bind:eduMajor"/>
+                          <Cell col="2" edittype="none" text="bind:eduState" combodataset="ds_eduState" combocodecol="state" combodatacol="state" combodisplayrowcount="-1"/>
+                          <Cell col="3" displaytype="normal" edittype="none" text="bind:eduDate" calendardisplaynulltype="none"/>
+                        </Band>
+                      </Format>
+                    </Formats>
+                  </Grid>
+                  <Grid id="Grid01" taborder="35" useinputpanel="false" left="59.59%" top="341" right="4.99%" height="200" binddataset="ds_certification" autofittype="col" autoenter="select" cellclickbound="cell" selecttype="cell" style="color:#333333ff;">
+                    <Formats>
+                      <Format id="default">
+                        <Columns>
+                          <Column size="158"/>
+                          <Column size="80"/>
+                        </Columns>
+                        <Rows>
+                          <Row size="24" band="head"/>
+                          <Row size="24"/>
+                        </Rows>
+                        <Band id="head">
+                          <Cell text="자격증명"/>
+                          <Cell col="1" text="취득일"/>
+                        </Band>
+                        <Band id="body">
+                          <Cell edittype="none" text="bind:certificateName"/>
+                          <Cell col="1" edittype="none" text="bind:takingDate" calendardisplaynulltype="none"/>
+                        </Band>
+                      </Format>
+                    </Formats>
+                  </Grid>
+                  <Grid id="Grid02" taborder="38" useinputpanel="false" left="5.09%" top="591" right="4.99%" height="200" binddataset="ds_company" autofittype="col" autoenter="select" cellclickbound="cell" selecttype="cell" style="color:#333333ff;">
+                    <Formats>
+                      <Format id="default">
+                        <Columns>
+                          <Column size="111"/>
+                          <Column size="57"/>
+                          <Column size="55"/>
+                          <Column size="45"/>
+                          <Column size="80"/>
+                        </Columns>
+                        <Rows>
+                          <Row size="26" band="head"/>
+                          <Row size="24" band="head"/>
+                          <Row size="24"/>
+                        </Rows>
+                        <Band id="head">
+                          <Cell rowspan="2" text="회사명"/>
+                          <Cell col="1" colspan="2" text="기간(YYYY-MM - YYYY.MM)"/>
+                          <Cell col="3" rowspan="2" text="직위"/>
+                          <Cell col="4" rowspan="2" text="담당업무"/>
+                          <Cell row="1" col="1" text="시작일"/>
+                          <Cell row="1" col="2" text="종료일"/>
+                        </Band>
+                        <Band id="body">
+                          <Cell edittype="none" text="bind:companyName"/>
+                          <Cell col="1" edittype="none" text="bind:startDate" calendardisplaynulltype="none"/>
+                          <Cell col="2" edittype="none" text="bind:endDate" calendardisplaynulltype="none"/>
+                          <Cell col="3" edittype="none" text="bind:rank"/>
+                          <Cell col="4" edittype="none" text="bind:companyWork"/>
+                        </Band>
+                      </Format>
+                    </Formats>
+                  </Grid>
+                  <Grid id="Grid03" taborder="41" useinputpanel="false" left="5.09%" top="851" right="42.95%" height="200" binddataset="ds_training" autofittype="col" autoenter="select" cellclickbound="cell" selecttype="cell" style="color:#333333ff;">
+                    <Formats>
+                      <Format id="default">
+                        <Columns>
+                          <Column size="80"/>
+                          <Column size="61"/>
+                          <Column size="61"/>
+                          <Column size="80"/>
+                        </Columns>
+                        <Rows>
+                          <Row size="24" band="head"/>
+                          <Row size="24"/>
+                        </Rows>
+                        <Band id="head">
+                          <Cell text="교육명"/>
+                          <Cell col="1" text="시작일"/>
+                          <Cell col="2" text="종료일"/>
+                          <Cell col="3" text="기관명"/>
+                        </Band>
+                        <Band id="body">
+                          <Cell edittype="none" text="bind:trainingName"/>
+                          <Cell col="1" edittype="none" text="bind:startDate" calendardisplaynulltype="none"/>
+                          <Cell col="2" edittype="none" text="bind:endDate" calendardisplaynulltype="none"/>
+                          <Cell col="3" edittype="none" text="bind:academyName"/>
+                        </Band>
+                      </Format>
+                    </Formats>
+                  </Grid>
+                  <Grid id="Grid04" taborder="44" useinputpanel="false" left="59.69%" top="851" right="4.99%" height="200" binddataset="ds_technology" autofittype="col" autoenter="select" cellclickbound="cell" selecttype="cell" style="color:#333333ff;">
+                    <Formats>
+                      <Format id="default">
+                        <Columns>
+                          <Column size="80"/>
+                          <Column size="80"/>
+                        </Columns>
+                        <Rows>
+                          <Row size="24" band="head"/>
+                          <Row size="24"/>
+                        </Rows>
+                        <Band id="head">
+                          <Cell text="보유기술 및 외국어능력"/>
+                          <Cell col="1" text="숙련도&#13;&#10;(A, B, C)"/>
+                        </Band>
+                        <Band id="body">
+                          <Cell edittype="none" text="bind:technologyName"/>
+                          <Cell col="1" edittype="none" text="bind:proficiency" combodataset="ds_techRank" combocodecol="value" combodatacol="value"/>
+                        </Band>
+                      </Format>
+                    </Formats>
+                  </Grid>
+                  <Static id="militaryEnd" taborder="59" left="42.17%" top="159" right="41.68%" height="25" style="border:0 solid #c0c0c0ff ;color:#46463dff;align:center;"/>
+                  <Static id="Static31" taborder="60" text="~" left="39.82%" top="159" right="57.73%" height="25" style="border:0 solid #c0c0c0ff ;color:#46463dff;align:center;"/>
+                  <Static id="gender" taborder="64" left="81.9%" top="87" right="4.89%" height="25" style="border:1 solid #999999ff ;color:#46463dff;align:center;"/>
+                  <Static id="userName" taborder="65" left="14.58%" top="87" right="69.67%" height="25" style="border:1 solid #999999ff ;color:#46463dff;align:center;"/>
+                  <Button id="btn_addCompany" taborder="36" text="추가" left="86.69%" top="561" width="40" height="25" visible="false" style="color:black;" onclick="Tab00_tabpage1_btn_addCompany_onclick"/>
+                  <Button id="btn_delCompany" taborder="37" text="삭제" left="91.1%" top="561" width="40" height="25" visible="false" style="color:black;" onclick="Tab00_tabpage1_btn_delCompany_onclick"/>
+                  <Button id="btn_addEducation" taborder="30" text="추가" left="48.73%" top="312" width="40" height="25" visible="false" style="color:black;" onclick="Tab00_tabpage1_btn_addEducation_onclick"/>
+                  <Button id="btn_delEducation" taborder="31" text="삭제" left="53.13%" top="312" width="40" height="25" visible="false" style="color:black;" onclick="Tab00_tabpage1_btn_delEducation_onclick"/>
+                  <Button id="btn_addCertification" taborder="33" text="추가" left="86.69%" top="312" width="40" height="25" visible="false" style="color:black;" onclick="Tab00_tabpage1_btn_addCertification_onclick"/>
+                  <Button id="btn_delCertification" taborder="34" text="삭제" left="91.1%" top="312" width="40" height="25" visible="false" style="color:black;" onclick="Tab00_tabpage1_btn_delCertification_onclick"/>
+                  <Button id="btn_addTraining" taborder="39" text="추가" left="48.73%" top="822" width="40" height="25" visible="false" style="color:black;" onclick="Tab00_tabpage1_btn_addTraining_onclick"/>
+                  <Button id="btn_delTraining" taborder="40" text="삭제" left="53.13%" top="822" width="40" height="25" visible="false" style="color:black;" onclick="Tab00_tabpage1_btn_delTraining_onclick"/>
+                  <Button id="btn_addTechnology" taborder="42" text="추가" left="86.69%" top="822" width="40" height="25" visible="false" style="color:black;" onclick="Tab00_tabpage1_btn_addTechnology_onclick"/>
+                  <Button id="btn_delTechnology" taborder="43" text="삭제" left="91.1%" top="822" width="40" height="25" visible="false" style="color:black;" onclick="Tab00_tabpage1_btn_delTechnology_onclick"/>
+                  <Edit id="Edit00" taborder="1" left="14.58%" top="87" right="69.67%" height="25" visible="false" style="border:1 solid #999999ff ;color:black;" imemode="hangul" readonly="false"/>
+                  <Radio id="Radio00" taborder="5" left="81.9%" top="87" right="4.89%" height="25" codecolumn="codecolumn" datacolumn="datacolumn" direction="vertical" index="0" value="남" visible="false" style="color:black;border:1 solid #999999ff ;align:left;" onitemchanged="gender_onchange">
+                    <Dataset id="innerdataset">
+                      <ColumnInfo>
+                        <Column id="codecolumn" size="256"/>
+                        <Column id="datacolumn" size="256"/>
+                      </ColumnInfo>
+                      <Rows>
+                        <Row>
+                          <Col id="codecolumn">남</Col>
+                          <Col id="datacolumn">남</Col>
+                        </Row>
+                        <Row>
+                          <Col id="codecolumn">여</Col>
+                          <Col id="datacolumn">여</Col>
+                        </Row>
+                      </Rows>
+                    </Dataset>
+                  </Radio>
+                  <Edit id="Edit02" taborder="7" left="14.58%" top="111" right="49.8%" height="25" visible="false" style="border:1 solid #999999ff ;color:black;"/>
+                  <Calendar id="Calendar00" taborder="9" left="62.33%" top="111" right="4.89%" height="25" visible="false" style="border:1 solid #999999ff ;color:#333333ff;"/>
+                  <Edit id="Edit03" taborder="11" left="14.58%" top="135" right="74.07%" height="25" visible="false" style="border:1 solid #999999ff ;color:black;"/>
+                  <Edit id="Edit04" taborder="13" left="35.62%" top="135" right="53.33%" height="25" visible="false" style="border:1 solid #999999ff ;color:black;"/>
+                  <Edit id="Edit05" taborder="15" left="58.22%" top="135" right="29.94%" height="25" visible="false" style="border:1 solid #999999ff ;color:black;"/>
+                  <Radio id="Radio01" taborder="17" left="82.78%" top="135" right="4.89%" height="25" codecolumn="codecolumn" datacolumn="datacolumn" direction="vertical" index="0" value="미혼" visible="false" style="color:black;border:1 solid #999999ff ;align:left;">
+                    <Dataset id="innerdataset">
+                      <ColumnInfo>
+                        <Column id="codecolumn" size="256"/>
+                        <Column id="datacolumn" size="256"/>
+                      </ColumnInfo>
+                      <Rows>
+                        <Row>
+                          <Col id="codecolumn">미혼</Col>
+                          <Col id="datacolumn">미혼</Col>
+                        </Row>
+                        <Row>
+                          <Col id="codecolumn">기혼</Col>
+                          <Col id="datacolumn">기혼</Col>
+                        </Row>
+                      </Rows>
+                    </Dataset>
+                  </Radio>
+                  <Calendar id="Calendar01" taborder="19" left="23.68%" top="159" right="61.94%" height="25" visible="false" style="border:1 solid #999999ff ;color:#333333ff;"/>
+                  <Calendar id="Calendar02" taborder="20" left="44.62%" top="159" right="41.68%" height="25" visible="false" style="border:1 solid #999999ff ;color:#333333ff;" type="normal"/>
+                  <Edit id="Edit06" taborder="22" left="72.7%" top="159" right="4.89%" height="25" visible="false" style="border:1 solid #999999ff ;color:black;"/>
+                  <MaskEdit id="MaskEdit00" taborder="24" left="17.42%" top="205" right="45.5%" height="25" displaynulltext="(유선)" style="border:1 solid #999999ff ;color:black;align:left;" visible="false" type="string" mask="###-####-####"/>
+                  <MaskEdit id="MaskEdit01" taborder="25" left="54.4%" top="205" right="4.89%" height="25" displaynulltext="(무선)" style="border:1 solid #999999ff ;color:black;align:left;" visible="false" type="string" mask="###-####-####"/>
+                  <Edit id="Edit07" taborder="27" left="17.42%" top="229" right="4.89%" height="25" visible="false" style="border:1 solid #999999ff ;color:black;"/>
+                  <Edit id="Edit08" taborder="29" left="17.42%" top="253" right="4.89%" height="25" visible="false" style="border:1 solid #999999ff ;color:black;"/>
+                  <MaskEdit id="Edit01" taborder="3" left="45.69%" top="87" right="30.72%" height="25" visible="false" style="border:1 solid #999999ff ;color:black;" mask="######-#######" type="string"/>
+                </Layout>
+              </Layouts>
+              <InitValue>
+                <Radio id="Radio00" style="color:black;padding:0 0 0 5;"/>
+                <Radio id="Radio01" style="color:black;padding:0 0 0 5;"/>
+                <Edit id="Edit00" style="color:black;"/>
+                <Edit id="Edit02" style="color:black;"/>
+                <Edit id="Edit03" style="color:black;"/>
+                <Edit id="Edit04" style="color:black;"/>
+                <Edit id="Edit05" style="color:black;"/>
+                <Calendar id="Calendar00" style="color:black;"/>
+                <Edit id="Edit06" style="color:black;"/>
+                <Calendar id="Calendar02" style="color:black;"/>
+                <Calendar id="Calendar01" style="color:black;"/>
+                <MaskEdit id="MaskEdit00" style="color:black;"/>
+                <Edit id="Edit07" style="color:black;"/>
+                <Edit id="Edit08" style="color:black;"/>
+                <MaskEdit id="MaskEdit01" style="color:black;"/>
+              </InitValue>
+            </Tabpage>
+            <Tabpage id="tabpage2" text="Skill Inventory">
+              <Layouts>
+                <Layout>
+                  <Static id="Static00" taborder="0" text="SKILL INVENTORY" left="5%" top="23" right="5%" height="50" style="border:3 solid #000000ff ;align:center;font:bold 20 Dotum;"/>
+                  <Static id="Static01" taborder="1" text="작성자 : " left="77.1%" top="42" right="17.12%" height="25" style="align:center;"/>
+                  <Static id="Static02" taborder="2" text="Static02" left="83.66%" top="42" right="5.68%" height="25"/>
+                  <Grid id="Grid00" taborder="3" useinputpanel="false" left="0%" top="132" height="560" width="100%" binddataset="ds_project" autofittype="col" autoenter="select" autoupdatetype="itemselect" cellclickbound="cell" selecttype="cell" autosizingtype="none" autosizebandtype="body">
+                    <Formats>
+                      <Format id="default">
+                        <Columns>
+                          <Column size="80"/>
+                          <Column size="80"/>
+                          <Column size="80"/>
+                          <Column size="80"/>
+                          <Column size="80"/>
+                          <Column size="80"/>
+                          <Column size="80"/>
+                          <Column size="80"/>
+                          <Column size="80"/>
+                          <Column size="80"/>
+                          <Column size="80"/>
+                          <Column size="80"/>
+                          <Column size="80"/>
+                          <Column size="80"/>
+                          <Column size="80"/>
+                        </Columns>
+                        <Rows>
+                          <Row size="42" band="head"/>
+                          <Row size="24" band="head"/>
+                          <Row size="24"/>
+                        </Rows>
+                        <Band id="head">
+                          <Cell rowspan="2" text="프로젝트명&#13;&#10;(업무명)"/>
+                          <Cell col="1" colspan="2" text="참여기간&#13;&#10;(YYYY.MM-&#13;&#10;YYYY.MM)"/>
+                          <Cell col="3" rowspan="2" text="고객사"/>
+                          <Cell col="4" rowspan="2" text="근무회사"/>
+                          <Cell col="5" colspan="2" text="개발분야"/>
+                          <Cell col="7" rowspan="2" text="역할"/>
+                          <Cell col="8" colspan="7" text="개발환경"/>
+                          <Cell row="1" col="1" text="시작일"/>
+                          <Cell row="1" col="2" text="종료일"/>
+                          <Cell row="1" col="5" text="산업"/>
+                          <Cell row="1" col="6" text="응용"/>
+                          <Cell row="1" col="8" text="기종"/>
+                          <Cell row="1" col="9" text="O.S"/>
+                          <Cell row="1" col="10" text="언어"/>
+                          <Cell row="1" col="11" text="DBMS"/>
+                          <Cell row="1" col="12" text="TOOL"/>
+                          <Cell row="1" col="13" text="통신"/>
+                          <Cell row="1" col="14" text="기타"/>
+                        </Band>
+                        <Band id="body">
+                          <Cell edittype="none" text="bind:projectName"/>
+                          <Cell col="1" edittype="none" text="bind:startDate"/>
+                          <Cell col="2" edittype="none" text="bind:endDate"/>
+                          <Cell col="3" edittype="none" text="bind:customer"/>
+                          <Cell col="4" edittype="none" text="bind:company"/>
+                          <Cell col="5" edittype="none" text="bind:industry"/>
+                          <Cell col="6" edittype="none" text="bind:application"/>
+                          <Cell col="7" edittype="none" text="bind:part"/>
+                          <Cell col="8" edittype="none" text="bind:model"/>
+                          <Cell col="9" edittype="none" text="bind:operatingSystem"/>
+                          <Cell col="10" edittype="none" text="bind:language"/>
+                          <Cell col="11" edittype="none" text="bind:dbms"/>
+                          <Cell col="12" edittype="none" text="bind:tool"/>
+                          <Cell col="13" edittype="none" text="bind:communication"/>
+                          <Cell col="14" edittype="none" text="bind:other"/>
+                        </Band>
+                      </Format>
+                    </Formats>
+                  </Grid>
+                  <Button id="btn_addProject" taborder="4" text="추가" left="91.1%" top="102" width="40" height="25" visible="false" onclick="Tab00_tabpage2_btn_addProject_onclick"/>
+                  <Button id="btn_delProject" taborder="5" text="삭제" left="95.5%" top="102" width="40" height="25" visible="false" onclick="Tab00_tabpage2_btn_delProject_onclick"/>
+                </Layout>
+              </Layouts>
+            </Tabpage>
+          </Tabpages>
+        </Tab>
+        <Button id="btn_save" taborder="1" text="저장" left="87.7%" top="5" right="1.07%" height="40" visible="false" onclick="btn_save_onclick" style="color:#46463dff;"/>
+        <Button id="btn_update" taborder="2" text="수정" left="87.7%" top="5" right="1.07%" height="40" visible="false" onclick="btn_update_onclick" style="color:#46463dff;"/>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="ds_resume">
+        <ColumnInfo>
+          <Column id="resumeNo" type="STRING" size="256"/>
+          <Column id="userNo" type="STRING" size="256"/>
+          <Column id="userName" type="STRING" size="256"/>
+          <Column id="personNo" type="STRING" size="256"/>
+          <Column id="gender" type="STRING" size="256"/>
+          <Column id="company" type="STRING" size="256"/>
+          <Column id="entryDate" type="STRING" size="256"/>
+          <Column id="department" type="STRING" size="256"/>
+          <Column id="rank" type="STRING" size="256"/>
+          <Column id="military" type="STRING" size="256"/>
+          <Column id="maritalState" type="STRING" size="256"/>
+          <Column id="startDate" type="STRING" size="256"/>
+          <Column id="endDate" type="STRING" size="256"/>
+          <Column id="invertebrate" type="STRING" size="256"/>
+          <Column id="phone" type="STRING" size="256"/>
+          <Column id="cellPhone" type="STRING" size="256"/>
+          <Column id="email" type="STRING" size="256"/>
+          <Column id="address" type="STRING" size="256"/>
+          <Column id="career" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_education">
+        <ColumnInfo>
+          <Column id="educationNo" type="STRING" size="256"/>
+          <Column id="schoolName" type="STRING" size="256"/>
+          <Column id="eduMajor" type="STRING" size="256"/>
+          <Column id="eduState" type="STRING" size="256"/>
+          <Column id="eduDate" type="STRING" size="256"/>
+          <Column id="resumeNo" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_certification">
+        <ColumnInfo>
+          <Column id="certificateNo" type="STRING" size="256"/>
+          <Column id="certificateName" type="STRING" size="256"/>
+          <Column id="takingDate" type="STRING" size="256"/>
+          <Column id="resumeNo" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_company">
+        <ColumnInfo>
+          <Column id="companyNo" type="STRING" size="256"/>
+          <Column id="companyName" type="STRING" size="256"/>
+          <Column id="startDate" type="STRING" size="256"/>
+          <Column id="endDate" type="STRING" size="256"/>
+          <Column id="companyWork" type="STRING" size="256"/>
+          <Column id="rank" type="STRING" size="256"/>
+          <Column id="resumeNo" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_training">
+        <ColumnInfo>
+          <Column id="trainingNo" type="STRING" size="256"/>
+          <Column id="trainingName" type="STRING" size="256"/>
+          <Column id="startDate" type="STRING" size="256"/>
+          <Column id="endDate" type="STRING" size="256"/>
+          <Column id="academyName" type="STRING" size="256"/>
+          <Column id="resumeNo" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_technology">
+        <ColumnInfo>
+          <Column id="technologyNo" type="STRING" size="256"/>
+          <Column id="technologyName" type="STRING" size="256"/>
+          <Column id="proficiency" type="STRING" size="256"/>
+          <Column id="resumeNo" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_project">
+        <ColumnInfo>
+          <Column id="projectNo" type="STRING" size="256"/>
+          <Column id="projectName" type="STRING" size="256"/>
+          <Column id="startDate" type="STRING" size="256"/>
+          <Column id="endDate" type="STRING" size="256"/>
+          <Column id="customer" type="STRING" size="256"/>
+          <Column id="company" type="STRING" size="256"/>
+          <Column id="industry" type="STRING" size="256"/>
+          <Column id="application" type="STRING" size="256"/>
+          <Column id="part" type="STRING" size="256"/>
+          <Column id="model" type="STRING" size="256"/>
+          <Column id="operatingSystem" type="STRING" size="256"/>
+          <Column id="language" type="STRING" size="256"/>
+          <Column id="dbms" type="STRING" size="256"/>
+          <Column id="tool" type="STRING" size="256"/>
+          <Column id="communication" type="STRING" size="256"/>
+          <Column id="other" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_eduState">
+        <ColumnInfo>
+          <Column id="code" type="STRING" size="256"/>
+          <Column id="state" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="code">0</Col>
+            <Col id="state">입학</Col>
+          </Row>
+          <Row>
+            <Col id="code">1</Col>
+            <Col id="state">중퇴</Col>
+          </Row>
+          <Row>
+            <Col id="code">2</Col>
+            <Col id="state">졸업</Col>
+          </Row>
+          <Row>
+            <Col id="code">3</Col>
+            <Col id="state">졸업예정</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="ds_techRank">
+        <ColumnInfo>
+          <Column id="code" type="STRING" size="256"/>
+          <Column id="value" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="code">0</Col>
+            <Col id="value">A</Col>
+          </Row>
+          <Row>
+            <Col id="code">1</Col>
+            <Col id="value">B</Col>
+          </Row>
+          <Row>
+            <Col id="code">2</Col>
+            <Col id="value">C</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="ds_searchUser">
+        <ColumnInfo>
+          <Column id="userNo" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row/>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Bind>
+      <BindItem id="item1" compid="Tab00.tabpage1.gender" propid="text" datasetid="ds_resume" columnid="gender"/>
+      <BindItem id="item0" compid="Tab00.tabpage1.personNo" propid="text" datasetid="ds_resume" columnid="personNo"/>
+      <BindItem id="item2" compid="Tab00.tabpage1.company" propid="text" datasetid="ds_resume" columnid="company"/>
+      <BindItem id="item3" compid="Tab00.tabpage1.entryDate" propid="text" datasetid="ds_resume" columnid="entryDate"/>
+      <BindItem id="item4" compid="Tab00.tabpage1.department" propid="text" datasetid="ds_resume" columnid="department"/>
+      <BindItem id="item5" compid="Tab00.tabpage1.rank" propid="text" datasetid="ds_resume" columnid="rank"/>
+      <BindItem id="item6" compid="Tab00.tabpage1.military" propid="text" datasetid="ds_resume" columnid="military"/>
+      <BindItem id="item7" compid="Tab00.tabpage1.marry" propid="text" datasetid="ds_resume" columnid="maritalState"/>
+      <BindItem id="item8" compid="Tab00.tabpage1.militaryStart" propid="text" datasetid="ds_resume" columnid="startDate"/>
+      <BindItem id="item9" compid="Tab00.tabpage1.militaryEnd" propid="text" datasetid="ds_resume" columnid="endDate"/>
+      <BindItem id="item10" compid="Tab00.tabpage1.militaryClass" propid="text" datasetid="ds_resume" columnid="invertebrate"/>
+      <BindItem id="item11" compid="Tab00.tabpage1.phone" propid="text" datasetid="ds_resume" columnid="phone"/>
+      <BindItem id="item12" compid="Tab00.tabpage1.cellPhone" propid="text" datasetid="ds_resume" columnid="cellPhone"/>
+      <BindItem id="item13" compid="Tab00.tabpage1.email" propid="text" datasetid="ds_resume" columnid="email"/>
+      <BindItem id="item14" compid="Tab00.tabpage1.address" propid="text" datasetid="ds_resume" columnid="address"/>
+      <BindItem id="item16" compid="Tab00.tabpage2.Static02" propid="text" datasetid="ds_resume" columnid="userName"/>
+      <BindItem id="item15" compid="Tab00.tabpage1.userName" propid="text" datasetid="ds_resume" columnid="userName"/>
+      <BindItem id="item17" compid="Tab00.tabpage1.Edit00" propid="value" datasetid="ds_resume" columnid="userName"/>
+      <BindItem id="item21" compid="Tab00.tabpage1.Edit02" propid="value" datasetid="ds_resume" columnid="company"/>
+      <BindItem id="item22" compid="Tab00.tabpage1.Calendar00" propid="value" datasetid="ds_resume" columnid="entryDate"/>
+      <BindItem id="item23" compid="Tab00.tabpage1.Edit03" propid="value" datasetid="ds_resume" columnid="department"/>
+      <BindItem id="item24" compid="Tab00.tabpage1.Edit04" propid="value" datasetid="ds_resume" columnid="rank"/>
+      <BindItem id="item25" compid="Tab00.tabpage1.Edit05" propid="value" datasetid="ds_resume" columnid="military"/>
+      <BindItem id="item26" compid="Tab00.tabpage1.Calendar01" propid="value" datasetid="ds_resume" columnid="startDate"/>
+      <BindItem id="item27" compid="Tab00.tabpage1.Calendar02" propid="value" datasetid="ds_resume" columnid="endDate"/>
+      <BindItem id="item28" compid="Tab00.tabpage1.Edit06" propid="value" datasetid="ds_resume" columnid="invertebrate"/>
+      <BindItem id="item29" compid="Tab00.tabpage1.MaskEdit00" propid="value" datasetid="ds_resume" columnid="phone"/>
+      <BindItem id="item30" compid="Tab00.tabpage1.MaskEdit01" propid="value" datasetid="ds_resume" columnid="cellPhone"/>
+      <BindItem id="item31" compid="Tab00.tabpage1.Edit07" propid="value" datasetid="ds_resume" columnid="email"/>
+      <BindItem id="item32" compid="Tab00.tabpage1.Edit08" propid="value" datasetid="ds_resume" columnid="address"/>
+      <BindItem id="item33" compid="Tab00.tabpage1.Radio00" propid="value" datasetid="ds_resume" columnid="gender"/>
+      <BindItem id="item19" compid="Tab00.tabpage1.Radio01" propid="value" datasetid="ds_resume" columnid="maritalState"/>
+      <BindItem id="item18" compid="Tab00.tabpage1.Edit01" propid="value" datasetid="ds_resume" columnid="personNo"/>
+    </Bind>
+    <Script type="xscript5.0"><![CDATA[//온로드
+this.form_onload = function(obj:Form, e:nexacro.LoadEventInfo)
+{
+	//alert(application.gb_userInfo.substr(-1));
+ 	if(application.gb_userInfo.substr(-1) == 0 && application.gb_accessState == "insert"){//일반유저이면
+ 		this.ds_searchUser.setColumn(0,"userNo",application.gb_userNo);//로그인된 유저번호 세팅
+ 		application.gb_searchUser = application.gb_userNo;
+ 	}else{
+		this.ds_searchUser.setColumn(0,"userNo",application.gb_searchUser);//클릭한 유저번호 세팅
+	}
+	//특정 데이터를 가져와서 열람할지 입력/수정 할지 결정
+	this.transaction("searchList","http://localhost:8080/nexacro-egov_skill/searchUser.do",
+	"ds_searchUser=ds_searchUser",
+	"ds_resume=ds_resume ds_education=ds_education ds_certification=ds_certification ds_company=ds_company ds_training=ds_training ds_technology=ds_technology ds_project=ds_project",
+	"","fnCallback");
+}
+//콜백
+this.fnCallback = function(){
+	trace("뷰 화면에서 트랜잭션 후 콜백");
+	 	
+	var isYou = application.gb_userNo == application.gb_searchUser;//본인인가?
+	//본인이면 수정버튼 활성화
+	//alert(isYou);
+	if(isYou){//본인이면
+		//alert(this.ds_resume.getColumn(0,"resumeNo") == undefined);
+		if(this.ds_resume.getColumn(0,"resumeNo") == undefined){//본인인데 이력서 없으면
+			if(application.gb_accessState == "search"){//검색창에서 들어왔을 경우
+				alert("이력서가 없습니다.\n이력서를 작성해주세요.");
+			}
+			//데이터셋 addRow
+			this.ds_resume.addRow();
+			this.ds_education.addRow();
+			this.ds_certification.addRow();
+			this.ds_company.addRow();
+			this.ds_training.addRow();
+			this.ds_technology.addRow();
+			this.ds_project.addRow();
+			
+			this.ds_resume.setColumn(0,"userNo",application.gb_userNo);//수정할때 필요한 이력서번호(resumeNo) 데이터셋에 미리 세팅해놓기
+			this.Tab00.tabpage1.Edit00.set_value(application.gb_userInfo.substr(0,application.gb_userInfo.length-1));//gb_userInfo에서 유저이름 가져오기
+			this.Tab00.tabpage1.Edit00.set_enable(false);//이름 변경 불가능
+			this.Tab00.tabpage1.Radio00.set_index(0);//라디오버튼 인덱스 0번(남)으로 설정
+			this.Tab00.tabpage1.Radio01.set_index(0);//라디오버튼 인덱스 0번(미혼)으로 설정
+			application.gb_modify = "insert";
+			this.insertMode();//모든 컴포넌트 수정 가능하도록 변경
+		}else if(this.ds_resume.getColumn(0,"resumeNo") != undefined && application.gb_accessState == "insert"){
+			//alert("이력서가 있고 입력모드");
+			this.btn_update.set_visible(false);//수정버튼 비활성화
+			this.btn_save.set_visible(true);//저장버튼 활성화
+			application.gb_modify = "update";
+			this.insertMode();//모든 컴포넌트 수정 가능하도록 변경
+		}else if(this.ds_resume.getColumn(0,"resumeNo") != undefined && application.gb_accessState != "insert"){//본인이고 이력서가 있으면
+			//alert("이력서가 있고 조회모드");
+			this.btn_update.set_visible(true);//수정버튼 활성화
+			application.gb_modify = "update";
+		}
+	}else{
+		//alert("타인");
+		if(this.ds_resume.getColumn(0,"resumeNo") == undefined){//타인인데 이력서 없으면
+			alert("이력서가 없습니다.");
+			this.go("Base::form_search.xfdl");//이전화면으로 이동
+		}
+	}
+}
+
+//수정버튼 누르면
+this.btn_update_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	this.insertMode();//모든 컴포넌트 수정 가능하도록 변경
+}
+
+//저장버튼 누르면
+this.btn_save_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{	
+	//총 경력 구하기
+	var temp = 0;
+	var currDay = 24 * 60 * 60 * 1000 * 30;
+	
+		for(var i=0; i<this.ds_company.getRowCount(); i++){
+			if(this.ds_company.getColumn(i,"companyName") != undefined && this.ds_company.getColumn(i,"companyName") != ""){
+				var from = this.ds_company.getColumn(i,"startDate");
+				var to = this.ds_company.getColumn(i,"endDate");
+				var date1 = new Date(from.substr(0,4),from.substr(4,2),from.substr(6,2));
+				var date2 = new Date(to.substr(0,4),to.substr(4,2),to.substr(6,2));
+				var diff = date2 - date1;
+				temp += nexacro.toNumber(diff/currDay);
+			}
+		}
+		if(this.ds_resume.getColumn(0,"entryDate") != undefined && this.ds_resume.getColumn(0,"entryDate") != ""){//이력서 상단 현재 재직중인 회사 경력
+			var currentCompany = this.ds_resume.getColumn(0,"entryDate");
+			var date3 = new Date();
+			var yy = date3.getFullYear();
+			var mm = date3.getMonth()+1;
+			var dd = date3.getDate();
+			var today = yy+""+mm+""+dd;
+			var date4 = new Date(currentCompany.substr(0,4),currentCompany.substr(5,2),currentCompany.substr(8,2));
+			var date5 = new Date(today.substr(0,4),today.substr(4,2),today.substr(6,2));
+			var diff = date5 - date4;
+			temp += nexacro.toNumber(diff/currDay);
+		}
+		
+		var year = "";
+		if(temp > 12){
+			year = parseInt(temp/12)+"년";
+			year = year+parseInt(temp%12)+"개월";
+		}else{
+			year = parseInt(temp%12)+"개월";
+		}
+		//이력서에 경력사항 추가
+		if(year != "" && year != undefined){
+			this.ds_resume.setColumn(0,"career",year);
+		}
+	if(application.gb_userNo != undefined && application.gb_userNo != ""){
+		if(this.ds_resume.getColumn(0,"resumeNo") == undefined){//이력서가 새로 작성될 경우 insert
+			this.fn_save("save");//서비스id를 save로 설정해서 저장 트랜잭션으로 이동
+		}else{//기존 이력서가 있는 경우 update		
+			this.fn_save("update");//서비스id를 update로 설정해서 저장 트랜잭션으로 이동
+		}
+	}
+}
+//저장하러가기
+this.fn_save = function(svcId){
+	this.transaction(svcId,"http://localhost:8080/nexacro-egov_skill/modify.do",
+	"ds_resume=ds_resume:A ds_education=ds_education:U ds_certification=ds_certification:U ds_company=ds_company:U ds_training=ds_training:U ds_technology=ds_technology:U ds_project=ds_project:U",
+	"","","saveCallback");
+}
+//modify 콜백
+this.saveCallback = function(svcId,errorcode,errormsg){
+	trace(svcId+" / "+errorcode+" / "+errormsg);
+	if(svcId == "save"){
+		if(errorcode == 0){
+			alert("저장되었습니다.");
+		}else{
+			alert("저장 실패");
+		}
+	}else if(svcId == "update"){
+		if(errorcode == 0){
+			alert("수정되었습니다.");
+		}else{
+			alert("수정 실패");
+		}
+	}
+}
+
+this.insertMode = function(){
+	//수정버튼 감추고 저장버튼 활성화
+	this.btn_save.set_visible(true);
+	this.btn_update.set_visible(false);
+	//학력
+	this.Tab00.tabpage1.Grid00.setCellProperty("body", 0, "edittype", "text");
+	this.Tab00.tabpage1.Grid00.setCellProperty("body", 1, "edittype", "text");
+	this.Tab00.tabpage1.Grid00.setCellProperty("body", 2, "edittype", "combo");
+	this.Tab00.tabpage1.Grid00.setCellProperty("body", 3, "edittype", "date");
+	this.Tab00.tabpage1.Grid00.setCellProperty("body", 3, "displaytype", "date");
+	//자격증
+	this.Tab00.tabpage1.Grid01.setCellProperty("body", 0, "edittype", "text");
+	this.Tab00.tabpage1.Grid01.setCellProperty("body", 1, "edittype", "date");
+	this.Tab00.tabpage1.Grid01.setCellProperty("body", 1, "displaytype", "date");
+	//회사
+	this.Tab00.tabpage1.Grid02.setCellProperty("body", 0, "edittype", "text");
+	this.Tab00.tabpage1.Grid02.setCellProperty("body", 1, "edittype", "date");
+	this.Tab00.tabpage1.Grid02.setCellProperty("body", 1, "displaytype", "date");
+	this.Tab00.tabpage1.Grid02.setCellProperty("body", 2, "edittype", "date");
+	this.Tab00.tabpage1.Grid02.setCellProperty("body", 2, "displaytype", "date");
+	this.Tab00.tabpage1.Grid02.setCellProperty("body", 3, "edittype", "text");
+	this.Tab00.tabpage1.Grid02.setCellProperty("body", 4, "edittype", "text");
+	//교육
+	this.Tab00.tabpage1.Grid03.setCellProperty("body", 0, "edittype", "text");
+	this.Tab00.tabpage1.Grid03.setCellProperty("body", 1, "edittype", "date");
+	this.Tab00.tabpage1.Grid03.setCellProperty("body", 1, "displaytype", "date");
+	this.Tab00.tabpage1.Grid03.setCellProperty("body", 2, "edittype", "date");
+	this.Tab00.tabpage1.Grid03.setCellProperty("body", 2, "displaytype", "date");
+	this.Tab00.tabpage1.Grid03.setCellProperty("body", 3, "edittype", "text");
+	//기술
+	this.Tab00.tabpage1.Grid04.setCellProperty("body", 0, "edittype", "text");
+	this.Tab00.tabpage1.Grid04.setCellProperty("body", 1, "edittype", "combo");	
+	//프로젝트
+	this.Tab00.tabpage2.Grid00.setCellProperty("body", 0, "edittype", "text");
+	this.Tab00.tabpage2.Grid00.setCellProperty("body", 1, "edittype", "date");
+	this.Tab00.tabpage2.Grid00.setCellProperty("body", 1, "displaytype", "date");
+	this.Tab00.tabpage2.Grid00.setCellProperty("body", 2, "edittype", "date");
+	this.Tab00.tabpage2.Grid00.setCellProperty("body", 2, "displaytype", "date");
+	this.Tab00.tabpage2.Grid00.setCellProperty("body", 3, "edittype", "text");
+	this.Tab00.tabpage2.Grid00.setCellProperty("body", 4, "edittype", "text");
+	this.Tab00.tabpage2.Grid00.setCellProperty("body", 5, "edittype", "text");
+	this.Tab00.tabpage2.Grid00.setCellProperty("body", 6, "edittype", "text");
+	this.Tab00.tabpage2.Grid00.setCellProperty("body", 7, "edittype", "text");
+	this.Tab00.tabpage2.Grid00.setCellProperty("body", 8, "edittype", "text");
+	this.Tab00.tabpage2.Grid00.setCellProperty("body", 9, "edittype", "text");
+	this.Tab00.tabpage2.Grid00.setCellProperty("body", 10, "edittype", "text");
+	this.Tab00.tabpage2.Grid00.setCellProperty("body", 11, "edittype", "text");
+	this.Tab00.tabpage2.Grid00.setCellProperty("body", 12, "edittype", "text");
+	this.Tab00.tabpage2.Grid00.setCellProperty("body", 13, "edittype", "text");
+	this.Tab00.tabpage2.Grid00.setCellProperty("body", 14, "edittype", "text");
+	//edit 활성화
+	if(application.gb_modify == "insert"){//입력일 경우
+		this.Tab00.tabpage1.Edit00.set_enable(false);//이름 수정가능-----------------------
+		this.Tab00.tabpage1.Edit01.set_enable(true);//주민번호 수정가능
+	}else if(application.gb_modify == "update"){//수정일 경우
+		this.Tab00.tabpage1.Edit00.set_enable(false);//이름 수정불가
+		this.Tab00.tabpage1.Edit01.set_enable(false);//주민번호 수정불가
+	}
+	this.Tab00.tabpage1.Edit00.set_visible(true);	
+	this.Tab00.tabpage1.Edit01.set_visible(true);
+	this.Tab00.tabpage1.Radio00.set_visible(true);
+	this.Tab00.tabpage1.Edit02.set_visible(true);
+	this.Tab00.tabpage1.Calendar00.set_visible(true);
+	this.Tab00.tabpage1.Edit03.set_visible(true);
+	this.Tab00.tabpage1.Edit04.set_visible(true);
+	this.Tab00.tabpage1.Edit05.set_visible(true);
+	this.Tab00.tabpage1.Radio01.set_visible(true);
+	this.Tab00.tabpage1.Calendar01.set_visible(true);
+	this.Tab00.tabpage1.Calendar02.set_visible(true);
+	this.Tab00.tabpage1.Edit06.set_visible(true);
+	this.Tab00.tabpage1.MaskEdit00.set_visible(true);
+	this.Tab00.tabpage1.MaskEdit01.set_visible(true);
+	this.Tab00.tabpage1.Edit07.set_visible(true);
+	this.Tab00.tabpage1.Edit08.set_visible(true);
+	//static 비활성화
+	this.Tab00.tabpage1.userName.set_visible(false);
+	this.Tab00.tabpage1.personNo.set_visible(false);
+	this.Tab00.tabpage1.gender.set_visible(false);
+	this.Tab00.tabpage1.company.set_visible(false);
+	this.Tab00.tabpage1.entryDate.set_visible(false);
+	this.Tab00.tabpage1.department.set_visible(false);
+	this.Tab00.tabpage1.rank.set_visible(false);
+	this.Tab00.tabpage1.military.set_visible(false);
+	this.Tab00.tabpage1.marry.set_visible(false);
+	this.Tab00.tabpage1.militaryStart.set_visible(false);
+	this.Tab00.tabpage1.militaryEnd.set_visible(false);
+	this.Tab00.tabpage1.militaryClass.set_visible(false);
+	this.Tab00.tabpage1.phone.set_visible(false);
+	this.Tab00.tabpage1.cellPhone.set_visible(false);
+	this.Tab00.tabpage1.email.set_visible(false);
+	this.Tab00.tabpage1.address.set_visible(false);
+	//버튼 활성화
+	this.Tab00.tabpage1.btn_addEducation.set_visible(true);
+	this.Tab00.tabpage1.btn_delEducation.set_visible(true);
+	this.Tab00.tabpage1.btn_addCertification.set_visible(true);
+	this.Tab00.tabpage1.btn_delCertification.set_visible(true);
+	this.Tab00.tabpage1.btn_addCompany.set_visible(true);
+	this.Tab00.tabpage1.btn_delCompany.set_visible(true);
+	this.Tab00.tabpage1.btn_addTraining.set_visible(true);
+	this.Tab00.tabpage1.btn_delTraining.set_visible(true);
+	this.Tab00.tabpage1.btn_addTechnology.set_visible(true);
+	this.Tab00.tabpage1.btn_delTechnology.set_visible(true);
+	this.Tab00.tabpage2.btn_addProject.set_visible(true);
+	this.Tab00.tabpage2.btn_delProject.set_visible(true);
+	application.gb_modify = "";
+}
+
+//성별 바뀔때
+this.gender_onchange = function(obj:Radio, e:nexacro.ItemChangeEventInfo)
+{
+	var gender = this.Tab00.tabpage1.Radio00.value;
+	if(gender == "남"){
+		//alert("남");
+		this.Tab00.tabpage1.Edit05.set_enable(true);
+		this.Tab00.tabpage1.Edit06.set_enable(true);
+		this.Tab00.tabpage1.Calendar01.set_enable(true);
+		this.Tab00.tabpage1.Calendar02.set_enable(true);
+	}else{
+		//alert("여");
+		this.Tab00.tabpage1.Edit05.set_enable(false);
+		this.Tab00.tabpage1.Edit06.set_enable(false);
+		this.Tab00.tabpage1.Calendar01.set_enable(false);
+		this.Tab00.tabpage1.Calendar02.set_enable(false);
+	}
+}
+
+//학력 추가버튼
+this.Tab00_tabpage1_btn_addEducation_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	var rows = this.ds_education.getRowCount()-1;
+	if(this.ds_education.getColumn(rows,"schoolName") != undefined && this.ds_education.getColumn(rows,"eduState") != undefined && this.ds_education.getColumn(rows,"eduDate") != undefined){
+		this.ds_education.addRow();
+	}else if(rows < 0){
+		this.ds_education.addRow();
+	}
+}
+//학력 삭제버튼
+this.Tab00_tabpage1_btn_delEducation_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	var deleteDialog = new ChildFrame;
+	deleteDialog.init("deleteDialog_popup", "absolute", 0, 0, 400, 400, 0, 0, "Main::form_delete_dialog.xfdl");
+	deleteDialog.set_openalign("center middle"); 
+	deleteDialog.showModal(this.getOwnerFrame(),"", this, "fnEducation");
+}
+//학력삭제
+this.fnEducation = function(){
+	if(application.gb_delete == "y"){
+		var nRow = this.ds_education.getRowCount()-1;
+		this.ds_education.deleteRow(nRow);
+		application.gb_delete = "";
+	}
+}
+
+//자격증 추가버튼
+this.Tab00_tabpage1_btn_addCertification_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	var rows = this.ds_certification.getRowCount()-1;
+	if(this.ds_certification.getColumn(rows,"certificateName") != undefined && this.ds_certification.getColumn(rows,"takingDate") != undefined){
+		this.ds_certification.addRow();
+	}else if(rows < 0){
+		this.ds_certification.addRow();
+	}
+}
+//자격증 삭제버튼
+this.Tab00_tabpage1_btn_delCertification_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	var deleteDialog = new ChildFrame;
+	deleteDialog.init("deleteDialog_popup", "absolute", 0, 0, 400, 400, 0, 0, "Main::form_delete_dialog.xfdl");
+	deleteDialog.set_openalign("center middle"); 
+	deleteDialog.showModal(this.getOwnerFrame(),"", this, "fnCertificate");
+}
+//자격증 삭제
+this.fnCertificate = function(){
+	if(application.gb_delete == "y"){
+		var nRow = this.ds_certification.getRowCount()-1;
+		this.ds_certification.deleteRow(nRow);
+		application.gb_delete = "";
+	}
+}
+
+//회사 추가버튼
+this.Tab00_tabpage1_btn_addCompany_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	var rows = this.ds_company.getRowCount()-1;
+	if(this.ds_company.getColumn(rows,"companyName") != undefined && this.ds_company.getColumn(rows,"startDate") != undefined && this.ds_company.getColumn(rows,"endDate") != undefined && this.ds_company.getColumn(rows,"rank") != undefined && this.ds_company.getColumn(rows,"companyWork") != undefined){
+		this.ds_company.addRow();
+	}else if(rows < 0){
+		this.ds_company.addRow();
+	}
+}
+//회사 삭제버튼
+this.Tab00_tabpage1_btn_delCompany_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	var deleteDialog = new ChildFrame;
+	deleteDialog.init("deleteDialog_popup", "absolute", 0, 0, 400, 400, 0, 0, "Main::form_delete_dialog.xfdl");
+	deleteDialog.set_openalign("center middle"); 
+	deleteDialog.showModal(this.getOwnerFrame(),"", this, "fnCompany");
+}
+//회사 삭제
+this.fnCompany = function(){
+	if(application.gb_delete == "y"){
+		var nRow = this.ds_company.getRowCount()-1;
+		this.ds_company.deleteRow(nRow);
+		application.gb_delete = "";
+	}
+}
+
+//교육 추가버튼
+this.Tab00_tabpage1_btn_addTraining_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	var rows = this.ds_training.getRowCount()-1;
+	if(this.ds_training.getColumn(rows,"trainingName") != undefined && this.ds_training.getColumn(rows,"startDate") != undefined && this.ds_training.getColumn(rows,"endDate") != undefined && this.ds_training.getColumn(rows,"academyName") != undefined){
+		this.ds_training.addRow();
+	}else if(rows < 0){
+		this.ds_training.addRow();
+	}
+}
+//교육 삭제버튼
+this.Tab00_tabpage1_btn_delTraining_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	var deleteDialog = new ChildFrame;
+	deleteDialog.init("deleteDialog_popup", "absolute", 0, 0, 400, 400, 0, 0, "Main::form_delete_dialog.xfdl");
+	deleteDialog.set_openalign("center middle"); 
+	deleteDialog.showModal(this.getOwnerFrame(),"", this, "fnTraining");
+}
+//교육 삭제
+this.fnTraining = function(){
+	if(application.gb_delete == "y"){
+		var nRow = this.ds_training.getRowCount()-1;
+		this.ds_training.deleteRow(nRow);
+		application.gb_delete = "";
+	}
+}
+
+//기술 추가버튼
+this.Tab00_tabpage1_btn_addTechnology_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	var rows = this.ds_technology.getRowCount()-1;
+	if(this.ds_technology.getColumn(rows,"technologyName") != undefined && this.ds_technology.getColumn(rows,"proficiency") != undefined){
+		this.ds_technology.addRow();
+	}else if(rows < 0){
+		this.ds_technology.addRow();
+	}
+}
+//기술 삭제버튼
+this.Tab00_tabpage1_btn_delTechnology_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	var deleteDialog = new ChildFrame;
+	deleteDialog.init("deleteDialog_popup", "absolute", 0, 0, 400, 400, 0, 0, "Main::form_delete_dialog.xfdl");
+	deleteDialog.set_openalign("center middle"); 
+	deleteDialog.showModal(this.getOwnerFrame(),"", this, "fnTechnology");
+}
+//기술 삭제
+this.fnTechnology = function(){
+	if(application.gb_delete == "y"){
+		var nRow = this.ds_technology.getRowCount()-1;
+		this.ds_technology.deleteRow(nRow);
+		application.gb_delete = "";
+	}
+}
+
+//프로젝트 추가버튼
+this.Tab00_tabpage2_btn_addProject_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	var rows = this.ds_project.getRowCount()-1;
+	if(this.ds_project.getColumn(rows,"projectName") != undefined && this.ds_project.getColumn(rows,"startDate") != undefined && this.ds_project.getColumn(rows,"endDate") != undefined &&
+		this.ds_project.getColumn(rows,"customer") != undefined && this.ds_project.getColumn(rows,"company") != undefined && this.ds_project.getColumn(rows,"part") != undefined){
+		this.ds_project.addRow();
+	}else if(rows < 0){
+		this.ds_project.addRow();
+	}
+}
+//프로젝트 삭제버튼
+this.Tab00_tabpage2_btn_delProject_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	var deleteDialog = new ChildFrame;
+	deleteDialog.init("deleteDialog_popup", "absolute", 0, 0, 400, 400, 0, 0, "Main::form_delete_dialog.xfdl");
+	deleteDialog.set_openalign("center middle"); 
+	deleteDialog.showModal(this.getOwnerFrame(),"", this, "fnProject");
+}
+//프로젝트 삭제
+this.fnProject = function(){
+	if(application.gb_delete == "y"){
+		var nRow = this.ds_project.getRowCount()-1;
+		this.ds_project.deleteRow(nRow);
+		application.gb_delete = "";
+	}
+}
+
+]]></Script>
+  </Form>
+</FDL>

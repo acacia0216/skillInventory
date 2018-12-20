@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<GlobalVariables>
+  <Variable id="gb_userInfo"/>
+  <Variable id="gb_userNo"/>
+  <Variable id="gb_searchUser"/>
+  <Variable id="gb_modify"/>
+  <Variable id="gb_delete"/>
+  <Variable id="gb_accessState"/>
+</GlobalVariables>

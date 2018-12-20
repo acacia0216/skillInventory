@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="1.5">
+  <TypeDefinition url="..\default_typedef.xml"/>
+  <Form id="title" classname="title" left="0" top="0" width="1024" height="89" titletext="New Form">
+    <Layouts>
+      <Layout>
+        <Static id="Static00" taborder="0" text="김준수 바보" left="5.66%" top="26" right="23.54%" height="23" style="font:bold 12 Dotum;"/>
+      </Layout>
+    </Layouts>
+  </Form>
+</FDL>

@@ -1,0 +1,448 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="1.5">
+  <TypeDefinition url="..\default_typedef.xml"/>
+  <Form id="form_search" classname="form_search" left="0" top="0" width="1024" height="700" titletext="New Form" onload="form_onload">
+    <Layouts>
+      <Layout>
+        <Grid id="Grid01" taborder="3" binddataset="ds_result" useinputpanel="false" autofittype="col" oncellclick="result_onCellClick" visible="false" left="20.61%" top="143" right="20.12%" height="448">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="80"/>
+                <Column size="39"/>
+                <Column size="80"/>
+                <Column size="77"/>
+                <Column size="129"/>
+                <Column size="80"/>
+                <Column size="40"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="이름"/>
+                <Cell col="1" text="성별"/>
+                <Cell col="2" text="현재회사"/>
+                <Cell col="3" text="경력"/>
+                <Cell col="4" text="주소"/>
+                <Cell col="5" text="최종학력"/>
+                <Cell col="6" text="열람"/>
+              </Band>
+              <Band id="body">
+                <Cell text="bind:userName"/>
+                <Cell col="1" text="bind:gender"/>
+                <Cell col="2" text="bind:company"/>
+                <Cell col="3" text="bind:career"/>
+                <Cell col="4" text="bind:address"/>
+                <Cell col="5" text="bind:education"/>
+                <Cell col="6" displaytype="button" text="보기"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Grid id="Grid00" taborder="7" binddataset="ds_userList" useinputpanel="false" autofittype="col" oncellclick="onCellClick" left="20.61%" top="142" right="20.12%" height="449">
+          <Formats>
+            <Format id="default">
+              <Columns>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="80"/>
+                <Column size="40"/>
+              </Columns>
+              <Rows>
+                <Row size="24" band="head"/>
+                <Row size="24"/>
+              </Rows>
+              <Band id="head">
+                <Cell text="번호"/>
+                <Cell col="1" text="이름"/>
+                <Cell col="2" text="아이디"/>
+                <Cell col="3" displaytype="normal" text="열람"/>
+              </Band>
+              <Band id="body">
+                <Cell text="bind:userNo"/>
+                <Cell col="1" text="bind:userName"/>
+                <Cell col="2" text="bind:userId"/>
+                <Cell col="3" displaytype="button" text="보기"/>
+              </Band>
+            </Format>
+          </Formats>
+        </Grid>
+        <Button id="btn_search" taborder="5" text="검색" onclick="btn_search_onclick" left="69.24%" top="104" right="21.19%" height="33"/>
+        <Combo id="Combo00" taborder="4" value="userName" text="이름" codecolumn="codecolumn" datacolumn="datacolumn" index="0" left="31.64%" top="105" right="60.74%" height="32">
+          <Dataset id="innerdataset">
+            <ColumnInfo>
+              <Column id="codecolumn" size="256"/>
+              <Column id="datacolumn" size="256"/>
+            </ColumnInfo>
+            <Rows>
+              <Row>
+                <Col id="codecolumn">userName</Col>
+                <Col id="datacolumn">이름</Col>
+              </Row>
+              <Row>
+                <Col id="codecolumn">userId</Col>
+                <Col id="datacolumn">아이디</Col>
+              </Row>
+            </Rows>
+          </Dataset>
+        </Combo>
+        <Edit id="Edit02" taborder="6" onkeydown="search_onchanged" left="40.04%" top="105" right="31.64%" height="31"/>
+        <Static id="Static01" taborder="1" text="상세검색(F5)" left="22.95%" top="110" right="69.73%" height="23" style="align:center;"/>
+        <Div id="Div00" taborder="2" left="20.02%" top="96" right="20.02%" height="294" style="background:#ffffffff;border:1 solid #385d8aff ;" visible="false">
+          <Layouts>
+            <Layout>
+              <Static id="Static02" taborder="47" left="0.33%" top="50" right="0.33%" height="35" style="border:1 solid #385d8aff ;"/>
+              <Static id="Static00" taborder="48" left="0.33%" top="2" right="0.33%" height="44" style="border:1 solid #385d8aff ;"/>
+              <Button id="Button00" taborder="49" text="검색" onclick="Button00_onclick" left="82.19%" top="7" right="1.63%" height="33" style="image:URL('Img::img_LF_search.png');"/>
+              <Static id="Static03" taborder="50" text="성별" left="0.33%" top="50" right="90.03%" height="35" style="border:1 solid #385d8aff ;align:center;"/>
+              <Radio id="Radio00" taborder="51" index="2" codecolumn="codecolumn" datacolumn="datacolumn" value="2" direction="vertical" left="11.44%" top="53" right="43.46%" height="35">
+                <Dataset id="innerdataset">
+                  <ColumnInfo>
+                    <Column id="codecolumn" size="256"/>
+                    <Column id="datacolumn" size="256"/>
+                  </ColumnInfo>
+                  <Rows>
+                    <Row>
+                      <Col id="codecolumn">0</Col>
+                      <Col id="datacolumn">남</Col>
+                    </Row>
+                    <Row>
+                      <Col id="codecolumn">1</Col>
+                      <Col id="datacolumn">여</Col>
+                    </Row>
+                    <Row>
+                      <Col id="codecolumn">2</Col>
+                      <Col id="datacolumn">상관없음</Col>
+                    </Row>
+                  </Rows>
+                </Dataset>
+              </Radio>
+              <Static id="Static06" taborder="52" left="0.33%" top="254" right="0.33%" height="35" style="border:1 solid #385d8aff ;"/>
+              <Static id="Static07" taborder="53" left="0.33%" top="220" right="0.33%" height="35" style="border:1 solid #385d8aff ;"/>
+              <Static id="Static05" taborder="68" onclick="Div00_Static05_onclick" left="0.33%" top="152" right="0.33%" height="35" style="border:1 solid #385d8aff ;"/>
+              <Static id="Static08" taborder="54" left="0.33%" top="186" right="0.33%" height="35" style="border:1 solid #385d8aff ;"/>
+              <Static id="Static09" taborder="55" left="0.33%" top="84" right="0.33%" height="35" style="border:1 solid #385d8aff ;"/>
+              <Static id="Static10" taborder="56" text="결혼여부" left="0.33%" top="84" right="90.03%" height="35" style="border:1 solid #385d8aff ;align:center;"/>
+              <Static id="Static11" taborder="57" text="자격증" left="0.33%" top="186" right="90.03%" height="35" style="border:1 solid #385d8aff ;align:center;"/>
+              <Radio id="Radio01" taborder="58" index="2" codecolumn="codecolumn" datacolumn="datacolumn" value="2" direction="vertical" left="11.44%" top="89" right="43.3%" height="28">
+                <Dataset id="innerdataset">
+                  <ColumnInfo>
+                    <Column id="codecolumn" size="256"/>
+                    <Column id="datacolumn" size="256"/>
+                  </ColumnInfo>
+                  <Rows>
+                    <Row>
+                      <Col id="codecolumn">0</Col>
+                      <Col id="datacolumn">미혼</Col>
+                    </Row>
+                    <Row>
+                      <Col id="codecolumn">1</Col>
+                      <Col id="datacolumn">기혼</Col>
+                    </Row>
+                    <Row>
+                      <Col id="codecolumn">2</Col>
+                      <Col id="datacolumn">상관없음</Col>
+                    </Row>
+                  </Rows>
+                </Dataset>
+              </Radio>
+              <Edit id="Edit01" taborder="59" inputtype="number" left="11.44%" top="157" right="73.69%" height="25"/>
+              <Static id="Static12" taborder="60" text="년" left="27.78%" top="157" right="68.63%" height="26" style="align:center;"/>
+              <Combo id="Combo01" taborder="61" value="0" text="이상" codecolumn="codecolumn" datacolumn="datacolumn" index="0" left="32.68%" top="157" right="55.23%" height="26">
+                <Dataset id="innerdataset">
+                  <ColumnInfo>
+                    <Column id="codecolumn" size="256"/>
+                    <Column id="datacolumn" size="256"/>
+                  </ColumnInfo>
+                  <Rows>
+                    <Row>
+                      <Col id="codecolumn">0</Col>
+                      <Col id="datacolumn">이상</Col>
+                    </Row>
+                    <Row>
+                      <Col id="codecolumn">1</Col>
+                      <Col id="datacolumn">이하</Col>
+                    </Row>
+                  </Rows>
+                </Dataset>
+              </Combo>
+              <Static id="Static13" taborder="62" text="최종학력" left="0.33%" top="220" right="90.03%" height="35" style="border:1 solid #385d8aff ;align:center;"/>
+              <Radio id="Radio02" taborder="63" index="4" codecolumn="codecolumn" datacolumn="datacolumn" value="4" direction="vertical" left="11.44%" top="225" right="27.29%" height="27">
+                <Dataset id="innerdataset">
+                  <ColumnInfo>
+                    <Column id="codecolumn" size="256"/>
+                    <Column id="datacolumn" size="256"/>
+                  </ColumnInfo>
+                  <Rows>
+                    <Row>
+                      <Col id="codecolumn">0</Col>
+                      <Col id="datacolumn">고졸</Col>
+                    </Row>
+                    <Row>
+                      <Col id="codecolumn">1</Col>
+                      <Col id="datacolumn">초대졸</Col>
+                    </Row>
+                    <Row>
+                      <Col id="codecolumn">2</Col>
+                      <Col id="datacolumn">대졸</Col>
+                    </Row>
+                    <Row>
+                      <Col id="codecolumn">3</Col>
+                      <Col id="datacolumn">대학원</Col>
+                    </Row>
+                    <Row>
+                      <Col id="codecolumn">4</Col>
+                      <Col id="datacolumn">상관없음</Col>
+                    </Row>
+                  </Rows>
+                </Dataset>
+              </Radio>
+              <Static id="Static04" taborder="64" text="보유기술" left="0.33%" top="254" right="90.03%" height="35" style="border:1 solid #385d8aff ;align:center;"/>
+              <Radio id="Radio03" taborder="65" index="3" codecolumn="codecolumn" datacolumn="datacolumn" value="3" direction="vertical" onitemchanged="Div00_Radio03_onitemclick" left="11.44%" top="261" right="26.8%" height="22">
+                <Dataset id="innerdataset">
+                  <ColumnInfo>
+                    <Column id="codecolumn" size="256"/>
+                    <Column id="datacolumn" size="256"/>
+                  </ColumnInfo>
+                  <Rows>
+                    <Row>
+                      <Col id="codecolumn">0</Col>
+                      <Col id="datacolumn">Java</Col>
+                    </Row>
+                    <Row>
+                      <Col id="codecolumn">1</Col>
+                      <Col id="datacolumn">Python</Col>
+                    </Row>
+                    <Row>
+                      <Col id="codecolumn">2</Col>
+                      <Col id="datacolumn">C</Col>
+                    </Row>
+                    <Row>
+                      <Col id="codecolumn">3</Col>
+                      <Col id="datacolumn">상관없음</Col>
+                    </Row>
+                    <Row>
+                      <Col id="codecolumn">4</Col>
+                      <Col id="datacolumn">기타</Col>
+                    </Row>
+                  </Rows>
+                </Dataset>
+              </Radio>
+              <Edit id="Edit00" taborder="66" enable="false" left="69.44%" top="259" right="9.15%" height="25"/>
+              <Static id="Static01" taborder="67" left="0.33%" top="118" right="0.33%" height="35" style="border:1 solid #385d8aff ;"/>
+              <Static id="Static14" taborder="69" text="나이" left="0.33%" top="118" right="90.03%" height="35" style="border:1 solid #385d8aff ;align:center;"/>
+              <Static id="Static15" taborder="70" text="경력" left="0.33%" top="152" right="90.03%" height="35" style="border:1 solid #385d8aff ;align:center;"/>
+              <Edit id="Edit02" taborder="71" left="11.44%" top="190" right="68.46%" height="28"/>
+              <Edit id="Edit03" taborder="72" inputtype="number" maxlength="2" left="11.44%" top="121" right="81.21%" height="28"/>
+              <Static id="Static16" taborder="73" text="~" left="19.44%" top="121" right="76.8%" height="28" style="align:center;"/>
+              <Edit id="Edit04" taborder="74" inputtype="number" maxlength="2" left="23.69%" top="121" right="68.46%" height="28"/>
+            </Layout>
+          </Layouts>
+        </Div>
+        <Static id="Static00" taborder="8" text="이력 조회" left="31.93%" top="30" right="33.11%" height="49" style="align:center;font:bold 18 Dotum;"/>
+        <Button id="btn_detail" taborder="0" onclick="btn_detail_onclick" left="20.7%" top="107" right="76.27%" height="29" tooltiptext="상세검색" hotkey="F5" style="image:URL('Img::btn_MDI_list_O.png');background:0;border:0 solid #999999ff ;"/>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="ds_userList">
+        <ColumnInfo>
+          <Column id="userNo" type="STRING" size="256"/>
+          <Column id="userName" type="STRING" size="256"/>
+          <Column id="userId" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+      <Dataset id="ds_search">
+        <ColumnInfo>
+          <Column id="condition" type="STRING" size="256"/>
+          <Column id="keyword" type="STRING" size="256"/>
+          <Column id="gender" type="STRING" size="256"/>
+          <Column id="maritalState" type="STRING" size="256"/>
+          <Column id="age" type="STRING" size="256"/>
+          <Column id="certificate" type="STRING" size="256"/>
+          <Column id="career" type="STRING" size="256"/>
+          <Column id="education" type="STRING" size="256"/>
+          <Column id="technology" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row/>
+        </Rows>
+      </Dataset>
+      <Dataset id="ds_result">
+        <ColumnInfo>
+          <Column id="userNo" type="STRING" size="256"/>
+          <Column id="userName" type="STRING" size="256"/>
+          <Column id="gender" type="STRING" size="256"/>
+          <Column id="company" type="STRING" size="256"/>
+          <Column id="career" type="STRING" size="256"/>
+          <Column id="address" type="STRING" size="256"/>
+          <Column id="education" type="STRING" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.0"><![CDATA[//온로드
+this.form_onload = function(obj:Form, e:nexacro.LoadEventInfo)
+{
+	this.Grid00.set_visible(true);
+	this.Grid01.set_visible(false);
+	this.transaction("searchList","http://localhost:8080/nexacro-egov_skill/searchAll.do",
+	"","ds_userList=output1","","");
+}
+//콜백
+this.fnCallback = function(){
+	trace("검색창 트랜잭션 이후 콜백");
+	this.Grid00.set_visible(false);
+	this.Grid01.set_visible(true);
+}
+
+//기본 그리드 유저리스트 셀 클릭시
+this.onCellClick = function(obj:Grid, e:nexacro.GridClickEventInfo)
+{
+	var nRow = this.Grid00.currentrow;
+	var userName = this.ds_userList.getColumn(nRow,"userName");
+	if(this.Grid00.getCellPos() == 3){
+		//alert(userName+"의 정보 열람");
+		//alert(this.ds_userList.getColumn(nRow,"userNo"));
+		application.gb_searchUser = this.ds_userList.getColumn(nRow,"userNo");
+		//this.Static02.set_value(application.gb_searchUser); 왜안먹음?;;
+		//alert(application.gb_searchUser);
+		this.go("Base::form_view.xfdl");
+	}else{
+		//alert(nRow+"번째 줄 "+userName);
+	}
+}
+
+//조건검색 버튼 클릭시
+this.Button00_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	this.btn_detail.set_tooltiptext("상세검색");
+	this.Static01.set_visible(true);
+	this.Div00.set_visible(false);
+	
+	//검색조건 데이터 가져오고
+	if(this.Div00.Radio00.text != "상관없음"){
+		var gender = this.Div00.Radio00.text;
+	}
+	if(this.Div00.Radio01.text != "상관없음"){
+		var maritalState = this.Div00.Radio01.text;
+	}
+	if(this.Div00.Radio02.text != "상관없음"){
+		var education = this.Div00.Radio02.text;
+	}
+	if(this.Div00.Radio03.text != "상관없음"){
+		var technology = this.Div00.Radio03.text;
+	}
+	if(this.Div00.Edit03.value != undefined && this.Div00.Edit04.value != undefined){
+		var age = this.Div00.Edit03.value;
+		var ageTo = this.Div00.Edit04.value;
+		age = age+"/"+ageTo;
+	}
+	if(this.Div00.Edit02.value != undefined){
+		var certificate = this.Div00.Edit02.value;
+	}
+	if(this.Div00.Edit01.value != undefined){
+		var career = this.Div00.Edit01.value;
+		var careerState = this.Div00.Combo01.text;
+		career = career+"/"+careerState;
+	}
+	
+	if(technology == "기타"){
+		technology = this.Div00.Edit00.value;
+	}
+	//데이터셋에 담고
+	this.ds_search.setColumn(0,"gender",gender);
+	this.ds_search.setColumn(0,"maritalState",maritalState);
+	this.ds_search.setColumn(0,"age",age);
+	this.ds_search.setColumn(0,"certificate",certificate);
+	this.ds_search.setColumn(0,"career",career);
+	this.ds_search.setColumn(0,"education",education);
+	this.ds_search.setColumn(0,"technology",technology);
+	//트랜잭션
+	alert(this.ds_search.getColumn(0,"career"));
+	alert(this.ds_search.getColumn(0,"age"));
+	this.transaction("searchList","http://localhost:8080/nexacro-egov_skill/conditionalSearch.do",
+	"ds_search=ds_search","ds_result=output1","","fnCallback");
+}
+//단일검색 버튼 클릭시
+this.btn_search_onclick = function(obj:Button,  e:nexacro.MouseEventInfo)
+{
+	//단일검색 데이터 가져오고
+	var condition = this.Combo00.value;
+	var keyword = this.Edit02.value;
+	//데이터셋에 담고
+	this.ds_search.setColumn(0,"condition",condition);
+	this.ds_search.setColumn(0,"keyword",keyword);
+	//트랜잭션
+ 	this.transaction("searchList","http://localhost:8080/nexacro-egov_skill/conditionalSearch.do",
+ 	"ds_search=ds_search","ds_result=output1","","fnCallback");
+}
+
+//엔터 클릭시
+this.onkeydown = function(obj:Edit, e:nexacro.KeyEventInfo)
+{
+	if(e.keycode == 13){
+		this.Button00_onclick();
+	}
+}
+
+//상세검색 메뉴버튼(F5)
+this.btn_detail_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	var temp = this.btn_detail.tooltiptext;
+	if(temp == "상세검색"){
+		this.btn_detail.set_tooltiptext("닫기");
+		this.Static01.set_visible(false);
+		this.Div00.set_visible(true);
+	}else{
+		this.btn_detail.set_tooltiptext("상세검색");
+		this.Static01.set_visible(true);
+		this.Div00.set_visible(false);
+	}
+	
+}
+
+//보유기술 기타항목
+this.Div00_Radio03_onitemclick = function(obj:Radio, e:nexacro.RadioMouseEventInfo)
+{
+	var check = this.Div00.Radio03.text;
+	if(check == "기타"){
+		this.Div00.Edit00.set_enable(true);
+	}else{
+		this.Div00.Edit00.set_enable(false);
+	}
+}
+
+//검색결과 그리드 셀 클릭시
+this.result_onCellClick = function(obj:Grid, e:nexacro.GridClickEventInfo)
+{
+	var nRow = this.Grid01.currentrow;
+	var userName = this.ds_result.getColumn(nRow,"userName");
+	if(this.Grid01.getCellPos() == 6){
+		//alert(userName+"의 정보 열람");
+		//alert(this.ds_userList.getColumn(nRow,"userNo"));
+		application.gb_searchUser = this.ds_result.getColumn(nRow,"userNo");
+		alert(this.ds_result.getColumn(nRow,"userName"));
+		//this.Static02.set_value(application.gb_searchUser); 왜안먹음?;;
+		//alert(application.gb_searchUser);
+		this.go("Base::form_view.xfdl");
+	}else{
+		//alert(nRow+"번째 줄 "+userName);
+	}
+}
+
+//검색 엔터입력
+this.search_onchanged = function(obj:Edit, e:nexacro.ChangeEventInfo)
+{
+	if(e.keycode == 13){
+		this.btn_search_onclick();
+	}
+}
+
+this.Div00_Static05_onclick = function(obj:Static,  e:nexacro.ClickEventInfo)
+{
+	
+}
+]]></Script>
+  </Form>
+</FDL>

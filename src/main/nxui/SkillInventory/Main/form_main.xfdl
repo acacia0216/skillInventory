@@ -1,0 +1,156 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="1.5">
+  <TypeDefinition url="..\default_typedef.xml"/>
+  <Form id="form_main" classname="form_main" left="0" top="0" width="1024" height="756" titletext="New Form" onload="form_onload" onkeydown="keydown">
+    <Layouts>
+      <Layout>
+        <Menu id="adminMenu" taborder="2" innerdataset="@ds_admin" idcolumn="code" captioncolumn="value" levelcolumn="level" left="0%" top="0" width="100%" height="48" onmenuclick="adminMenu_onmenuclick"/>
+        <Menu id="userMenu" taborder="0" left="0%" top="0" height="48" width="100%" innerdataset="@ds_user" captioncolumn="value" idcolumn="code" levelcolumn="level" onmenuclick="userMenu_onmenuclick" hotkeycolumn="hotkey"/>
+        <Static id="Static00" taborder="3" left="82.23%" top="11" right="1.66%" height="29"/>
+        <Div id="Div00" taborder="4" left="0%" top="48" width="100%" height="700">
+          <Layouts>
+            <Layout/>
+          </Layouts>
+        </Div>
+      </Layout>
+    </Layouts>
+    <Objects>
+      <Dataset id="ds_user">
+        <ColumnInfo>
+          <Column id="code" type="STRING" size="256"/>
+          <Column id="value" type="STRING" size="256"/>
+          <Column id="level" type="STRING" size="256"/>
+          <Column id="hotkey" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="code">0</Col>
+            <Col id="value">메뉴</Col>
+            <Col id="level">0</Col>
+          </Row>
+          <Row>
+            <Col id="code">insert</Col>
+            <Col id="value">입력</Col>
+            <Col id="level">1</Col>
+          </Row>
+          <Row>
+            <Col id="code">search</Col>
+            <Col id="value">조회</Col>
+            <Col id="level">1</Col>
+            <Col id="hotkey">F2</Col>
+          </Row>
+          <Row>
+            <Col id="code">exit</Col>
+            <Col id="value">프로그램 종료</Col>
+            <Col id="level">1</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+      <Dataset id="ds_admin">
+        <ColumnInfo>
+          <Column id="code" type="STRING" size="256"/>
+          <Column id="value" type="STRING" size="256"/>
+          <Column id="level" type="STRING" size="256"/>
+          <Column id="hotkey" type="STRING" size="256"/>
+        </ColumnInfo>
+        <Rows>
+          <Row>
+            <Col id="code">0</Col>
+            <Col id="value">메뉴</Col>
+            <Col id="level">0</Col>
+          </Row>
+          <Row>
+            <Col id="code">search</Col>
+            <Col id="value">조회</Col>
+            <Col id="level">1</Col>
+            <Col id="hotkey">F2</Col>
+          </Row>
+          <Row>
+            <Col id="code">exit</Col>
+            <Col id="value">프로그램 종료</Col>
+            <Col id="level">1</Col>
+          </Row>
+        </Rows>
+      </Dataset>
+    </Objects>
+    <Script type="xscript5.0"><![CDATA[//온로드
+this.form_onload = function(obj:Form, e:nexacro.LoadEventInfo)
+{
+	var loginpop = new ChildFrame;
+	loginpop.init("login_popup", "absolute", 0, 0, 400, 400, 0, 0, "Main::form_login.xfdl");
+	loginpop.set_openalign("center middle"); //추가
+	loginpop.showModal(this.getOwnerFrame(),"", this, "popup_callback");
+	//this.form_main.setFocus(true);
+	application.gb_accessState = "";
+}
+
+ this.popup_callback = function()
+{
+	trace("main_popup_callback");
+	if(application.gb_userInfo == ""){
+		application.exit();
+	}else{
+		//alert(application.gb_userInfo + " / " + application.gb_userNo);
+		var userAuth = application.gb_userInfo.substr(-1);
+		//alert(userAuth);
+		//alert(application.gb_userInfo.substr(0,application.gb_userInfo.length-1)+"님 반갑습니다");//alert 지우면 에러..?
+		if(userAuth == 0){//일반 유저일경우
+			//alert("일반 유저");
+			this.adminMenu.set_visible(false);
+			this.userMenu.set_visible(true);
+		}else if(userAuth == 1){//관리자 유저일경우
+			//alert("관리자 유저");
+			this.adminMenu.set_visible(true);
+			this.userMenu.set_visible(false);
+		}else{
+			alert("비정상적인 접속");
+			application.exit();
+		}
+		this.Static00.set_text("'"+application.gb_userInfo.substr(0,application.gb_userInfo.length-1)+"'님 반갑습니다.");
+	}
+}
+
+//유저메뉴 클릭시
+this.userMenu_onmenuclick = function(obj:Menu, e:nexacro.MenuClickEventInfo)
+{
+	if(e.id == "insert"){
+		application.gb_accessState = e.id;
+		this.Div00.go("Base::form_view.xfdl");
+	}else if(e.id == "search"){
+		application.gb_accessState = e.id;
+		this.Div00.go("Base::form_search.xfdl");
+	}else if(e.id == "exit"){
+		var exitDialog = new ChildFrame;
+		exitDialog.init("exitDialog_popup", "absolute", 0, 0, 400, 400, 0, 0, "Main::form_exit_dialog.xfdl");
+		exitDialog.set_openalign("center middle"); //추가
+		exitDialog.showModal(this.getOwnerFrame(),"", this, "");
+	}else{
+		alert("에러");
+	}
+}
+
+//관리자메뉴 클릭시
+this.adminMenu_onmenuclick = function(obj:Menu, e:nexacro.MenuClickEventInfo)
+{
+	if(e.id == "search"){
+		this.Div00.go("Base::form_search.xfdl");
+	}else if(e.id == "exit"){
+		var exitDialog = new ChildFrame;
+		exitDialog.init("exitDialog_popup", "absolute", 0, 0, 400, 400, 0, 0, "Main::form_exit_dialog.xfdl");
+		exitDialog.set_openalign("center middle"); //추가
+		exitDialog.showModal(this.getOwnerFrame(),"", this, "");
+	}else{
+		alert("에러");
+	}
+}
+
+//키보드
+this.keydown = function(obj:Form, e:nexacro.KeyEventInfo)
+{
+	if(e.keycode == 113){
+		this.Div00.go("Base::form_search.xfdl");
+	}
+}
+]]></Script>
+  </Form>
+</FDL>

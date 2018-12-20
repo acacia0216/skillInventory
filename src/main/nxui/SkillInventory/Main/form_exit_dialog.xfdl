@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="1.5">
+  <TypeDefinition url="..\default_typedef.xml"/>
+  <Form id="form_login" classname="form_login" left="0" top="0" width="300" height="103" titletext="프로그램 종료 알림">
+    <Layouts>
+      <Layout>
+        <Static id="Static01" taborder="1" text="프로그램을 종료하시겠습니까?" left="15%" top="9" right="12.67%" height="45"/>
+        <Button id="Button00" taborder="2" text="예" left="21%" top="60" right="52.67%" height="28" onclick="Button00_onclick"/>
+        <Button id="Button01" taborder="3" text="아니오" left="54.33%" top="60" right="19.33%" height="28" onclick="Button01_onclick"/>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.0"><![CDATA[//아니오 클릭
+this.Button01_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	this.close();
+}
+
+//예 클릭
+this.Button00_onclick = function(obj:Button,  e:nexacro.ClickEventInfo)
+{
+	this.close();
+	application.exit();
+}
+]]></Script>
+  </Form>
+</FDL>
